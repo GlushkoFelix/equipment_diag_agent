@@ -25,17 +25,29 @@ pnpm-debug.log*
 # ===== 本地模型权重（BGE-M3 约 2.2GB，超出仓库限制，需自行下载）=====
 models/
 
-# ===== 运行时数据（上传文件、批处理工作目录）=====
-storage/uploads/
-storage/batches/
+# ===== 运行时数据：全目录忽略，仅放行被文档引用的基线与证据 =====
+# 数据库/检查点/上传文件/批处理工作目录/知识库索引均为本地运行时产物
+/storage/**
+!/storage/pytest-accept-v5.xml
+!/storage/evidence/
+!/storage/evidence/**
+!/storage/eval/
+!/storage/eval/evb_01M5Q111XDZHNAA1YMCY2K14RR.json
 
-# ===== 运行时数据库与检查点 =====
-storage/*.db
-storage/*.db-wal
-storage/*.db-shm
-storage/*.sqlite3
-storage/*.sqlite3-wal
-storage/*.sqlite3-shm
+# ===== 截图：只保留 E2E 全链路、浏览器兼容冒烟与被文档引用的单张 =====
+/screenshots/*
+!/screenshots/e2e/
+!/screenshots/e2e/**
+!/screenshots/evidence/
+!/screenshots/evidence/**
+!/screenshots/20-batch-running.png
+
+# ===== 文档：只保留核心设计与权威验收（V5），过程日志与中间版本留在本地 =====
+/docs/log/
+/docs/FINAL-ACCEPTANCE.md
+/docs/FINAL-ACCEPTANCE-V2.md
+/docs/FINAL-ACCEPTANCE-V3.md
+/docs/FINAL-ACCEPTANCE-V4.md
 
 # ===== 编辑器 / 工具临时目录 =====
 .vscode/
