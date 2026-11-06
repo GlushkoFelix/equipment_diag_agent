@@ -1,0 +1,12 @@
+retry: 3000
+
+id: 0
+event: snapshot
+data: {"seq":0,"stream_kind":"diagnosis","stream_id":"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3","type":"snapshot","revision":1,"occurred_at":"2026-10-24T14:50:48.682Z","payload":{"diagnosis_id":"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3","device_id":"QA-TIMEOUT-parse_input","input_type":"form","input_summary":{},"report_title":null,"status":"running","version":1,"diagnosis_revision":1,"primary_type":null,"secondary_types":[],"confidence":null,"confidence_level":null,"confidence_breakdown":null,"knowledge_status":null,"evidence_refs":[],"features":{"normalized":{"device_id":"QA-TIMEOUT-parse_input","product_type":"M","air_temp_k":298.1,"process_temp_k":308.6,"rotational_speed_rpm":1500.0,"torque_nm":40.0,"tool_wear_min":100.0},"derived":{"temp_diff":10.5,"power_w":6283.185,"wear_torque":4000.0},"completeness":1.0,"missing_fields":[],"assumptions":[],"data_quality_flags":[]},"retrieval":null,"retry_count":0,"review_round":0,"report_retry_count":0,"report_elements_check":null,"duration_ms":0,"interrupt":null,"human_decision":null,"auto_review":false,"report":null,"report_meta":null,"trace_steps":[],"timings":{"total_ms":0,"nodes":{}},"error":null,"batch":null,"created_at":"2026-10-24T14:50:48.674Z","started_at":"2026-10-24T14:50:48.674Z","finished_at":null}}
+
+event: heartbeat
+data: {"seq":null,"stream_kind":"diagnosis","stream_id":"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3","type":"heartbeat","revision":1,"occurred_at":"2026-10-24T14:51:03.914Z","payload":{"server_time":"2026-10-24T14:51:03.914Z"}}
+
+id: 1
+event: status
+data: {"seq":1,"stream_kind":"diagnosis","stream_id":"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3","type":"status","revision":1,"occurred_at":"2026-10-24T14:51:04.679Z","payload":{"from":"running","to":"failed_timeout","reason":"finalize","version":2}}

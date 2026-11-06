@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "FILE_TYPE_NOT_ALLOWED",
+    "message": "仅支持 .csv 文件",
+    "request_id": "req_01M6G24XV7KJGB0MCD32KHCRFE"
+  }
+}

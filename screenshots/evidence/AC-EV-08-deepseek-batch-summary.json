@@ -1,0 +1,114 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "1.0.0",
+    "checked_at": "2026-10-25T10:29:23.739Z",
+    "dependencies": {
+      "database": "ok",
+      "checkpoint_store": "ok",
+      "vector_index": "ok",
+      "embedding_model": "ok",
+      "llm_config": "ok"
+    }
+  },
+  "upload": {
+    "upload_id": "up_01M5S9Q7NAXFQW1BZW8ETNXPX9",
+    "file_name": "batch240.csv",
+    "size_bytes": 8591,
+    "encoding": "utf-8",
+    "row_count": 240,
+    "headers": [
+      "Device ID",
+      "Product Type",
+      "Air temperature [K]",
+      "Process temperature [K]",
+      "Rotational speed [rpm]",
+      "Torque [Nm]",
+      "Tool wear [min]"
+    ],
+    "preview_rows": [
+      {
+        "Device ID": "M14860",
+        "Product Type": "M",
+        "Air temperature [K]": "298.1",
+        "Process temperature [K]": "308.6",
+        "Rotational speed [rpm]": "1551",
+        "Torque [Nm]": "42.8",
+        "Tool wear [min]": "0"
+      },
+      {
+        "Device ID": "L47181",
+        "Product Type": "L",
+        "Air temperature [K]": "298.2",
+        "Process temperature [K]": "308.7",
+        "Rotational speed [rpm]": "1408",
+        "Torque [Nm]": "46.3",
+        "Tool wear [min]": "3"
+      },
+      {
+        "Device ID": "L47182",
+        "Product Type": "L",
+        "Air temperature [K]": "298.1",
+        "Process temperature [K]": "308.5",
+        "Rotational speed [rpm]": "1498",
+        "Torque [Nm]": "49.4",
+        "Tool wear [min]": "5"
+      },
+      {
+        "Device ID": "L47183",
+        "Product Type": "L",
+        "Air temperature [K]": "298.2",
+        "Process temperature [K]": "308.6",
+        "Rotational speed [rpm]": "1433",
+        "Torque [Nm]": "39.5",
+        "Tool wear [min]": "7"
+      },
+      {
+        "Device ID": "L47184",
+        "Product Type": "L",
+        "Air temperature [K]": "298.2",
+        "Process temperature [K]": "308.7",
+        "Rotational speed [rpm]": "1408",
+        "Torque [Nm]": "40.0",
+        "Tool wear [min]": "9"
+      }
+    ],
+    "header_signature": "sha256:7785d7b26c1f841a4b945120b5e336de1a470d5b49ae22c271f830ad84581a68",
+    "suggested_mapping": {
+      "device_id": "Device ID",
+      "product_type": "Product Type",
+      "air_temp_k": "Air temperature [K]",
+      "process_temp_k": "Process temperature [K]",
+      "rotational_speed_rpm": "Rotational speed [rpm]",
+      "torque_nm": "Torque [Nm]",
+      "tool_wear_min": "Tool wear [min]"
+    },
+    "matched_scheme": null,
+    "issues": []
+  },
+  "batch": {
+    "batch_task_id": "bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD",
+    "file_name": "batch240.csv",
+    "total_rows": 240,
+    "status": "partially_failed",
+    "default_device_id": null,
+    "counts": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 209,
+      "degraded": 0,
+      "degraded_review": 30,
+      "failed": 1,
+      "failed_timeout": 0,
+      "cancelled": 0
+    },
+    "completed_rows": 240,
+    "progress": 1.0,
+    "cancel_requested": false,
+    "timeout_deadline": "2026-10-25T11:29:23.780Z",
+    "created_at": "2026-10-25T10:29:23.780Z",
+    "started_at": "2026-10-25T10:29:23.830Z",
+    "finished_at": "2026-10-25T10:42:32.649Z",
+    "error_code": null
+  }
+}

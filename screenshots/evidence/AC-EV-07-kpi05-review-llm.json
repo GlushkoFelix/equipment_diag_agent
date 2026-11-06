@@ -1,0 +1,211 @@
+{
+  "summary": {
+    "samples": 20,
+    "knowledge_missing_samples": 0,
+    "fabricated": 0,
+    "fabrication_rate": 0.0,
+    "note": "KPI-05 分母为固定 20 条边界集；分子=知识未覆盖仍给确定性结论且未声明未覆盖"
+  },
+  "rows": [
+    {
+      "sample_id": "EDGE-01",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.9625,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-02",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-03",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-04",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-05",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-06",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-07",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-08",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-09",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-10",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-11",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.9625,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-12",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.9625,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-13",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-14",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-15",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-16",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-17",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-18",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-19",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    },
+    {
+      "sample_id": "EDGE-20",
+      "status": "succeeded",
+      "primary_type": "正常",
+      "confidence": 0.955,
+      "knowledge_status": "supported",
+      "reviewer_a_deterministic": true,
+      "reviewer_b_declared_uncovered": false,
+      "is_bogus": false
+    }
+  ]
+}

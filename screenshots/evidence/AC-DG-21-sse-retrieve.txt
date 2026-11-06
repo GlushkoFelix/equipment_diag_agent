@@ -1,0 +1,12 @@
+retry: 3000
+
+id: 0
+event: snapshot
+data: {"seq":0,"stream_kind":"diagnosis","stream_id":"dx_01M5Q69P21691Y5ABZFHXPBAD8","type":"snapshot","revision":1,"occurred_at":"2026-10-24T14:51:05.162Z","payload":{"diagnosis_id":"dx_01M5Q69P21691Y5ABZFHXPBAD8","device_id":"QA-TIMEOUT-retrieve","input_type":"form","input_summary":{},"report_title":null,"status":"running","version":1,"diagnosis_revision":1,"primary_type":null,"secondary_types":[],"confidence":null,"confidence_level":null,"confidence_breakdown":null,"knowledge_status":null,"evidence_refs":[],"features":{"normalized":{"device_id":"QA-TIMEOUT-retrieve","product_type":"M","air_temp_k":298.1,"process_temp_k":308.6,"rotational_speed_rpm":1500.0,"torque_nm":40.0,"tool_wear_min":100.0},"derived":{"temp_diff":10.5,"power_w":6283.185,"wear_torque":4000.0},"completeness":1.0,"missing_fields":[],"assumptions":[],"data_quality_flags":[]},"retrieval":null,"retry_count":0,"review_round":0,"report_retry_count":0,"report_elements_check":null,"duration_ms":0,"interrupt":null,"human_decision":null,"auto_review":false,"report":null,"report_meta":null,"trace_steps":[{"step_id":"stp_41f1be9158209c62e9deb2bb","node":"parse_input","event":"start","rule_id":null,"revision":1,"summary":null,"duration_ms":null,"created_at":"2026-10-24T14:51:05.157Z"},{"step_id":"stp_f26994fc3d4744606f67ca5b","node":"parse_input","event":"end","rule_id":"RT-01","revision":1,"summary":"7 项特征齐备","duration_ms":0,"created_at":"2026-10-24T14:51:05.158Z"}],"timings":{"total_ms":0,"nodes":{"parse_input":0}},"error":null,"batch":null,"created_at":"2026-10-24T14:51:05.153Z","started_at":"2026-10-24T14:51:05.153Z","finished_at":null}}
+
+event: heartbeat
+data: {"seq":null,"stream_kind":"diagnosis","stream_id":"dx_01M5Q69P21691Y5ABZFHXPBAD8","type":"heartbeat","revision":1,"occurred_at":"2026-10-24T14:51:20.372Z","payload":{"server_time":"2026-10-24T14:51:20.372Z"}}
+
+id: 1
+event: status
+data: {"seq":1,"stream_kind":"diagnosis","stream_id":"dx_01M5Q69P21691Y5ABZFHXPBAD8","type":"status","revision":1,"occurred_at":"2026-10-24T14:51:21.168Z","payload":{"from":"running","to":"failed_timeout","reason":"finalize","version":2}}

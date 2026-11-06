@@ -1,0 +1,12 @@
+{
+  "diagnosis_id": "dx_01M6G24Y5D3R2ER8QW4633JNAV",
+  "deleted_path": "C:\\Users\\25352\\AppData\\Local\\Temp\\pytest-of-25352\\pytest-151\\test_ac_in17_history_detail_su0\\uploads\\up_01M6G24Y4ZJWT7D2YZ3NX581KE_in17.csv",
+  "input_summary": {
+    "file_name": "in17.csv",
+    "row_no": 1,
+    "text_excerpt": null
+  },
+  "input_type": "csv_single",
+  "report_status": 200,
+  "history_total": 1
+}

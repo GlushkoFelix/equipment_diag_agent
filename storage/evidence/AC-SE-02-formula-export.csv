@@ -1,0 +1,6 @@
+﻿"row_no","device_id","primary_type","confidence","status","report_summary","duration_ms","error_field","error_code"
+"1","'=cmd","","","failed","","0","device_id","DEVICE_ID_INVALID"
+"2","'+SUM(1)","","","failed","","0","device_id","DEVICE_ID_INVALID"
+"3","'-1+1","","","failed","","0","device_id","DEVICE_ID_INVALID"
+"4","'@SUM(1)","","","failed","","0","device_id","DEVICE_ID_INVALID"
+"5","SAFE-1","HDF","0.9375","succeeded","SAFE-1 HDF 诊断报告","0","",""

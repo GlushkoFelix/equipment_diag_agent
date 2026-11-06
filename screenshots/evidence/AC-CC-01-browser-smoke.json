@@ -1,0 +1,290 @@
+[
+  {
+    "engine": "chrome",
+    "browser_version": "156.0.8078.47",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 5.9
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "pass": true
+  },
+  {
+    "engine": "edge",
+    "browser_version": "156.0.4314.42",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 5.4
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+    "pass": true
+  },
+  {
+    "engine": "firefox",
+    "browser_version": "157.0",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 6.5
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+    "pass": true
+  },
+  {
+    "engine": "webkit",
+    "browser_version": "27.2",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 5.4
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+    "pass": true
+  },
+  {
+    "engine": "chrome155",
+    "browser_version": "155.0.8059.84",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 5.9
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "pass": true
+  },
+  {
+    "engine": "firefox_prev",
+    "browser_version": "155.0",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 5.5
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0",
+    "pass": true
+  },
+  {
+    "engine": "webkit_prev",
+    "browser_version": "26.6",
+    "steps": [
+      {
+        "step": "login_page",
+        "ok": true
+      },
+      {
+        "step": "weak_password_hint",
+        "hint_visible": true,
+        "submit_disabled": true
+      },
+      {
+        "step": "login_ok",
+        "ok": true
+      },
+      {
+        "step": "diagnosis_submitted",
+        "ok": true
+      },
+      {
+        "step": "sse_progress",
+        "ok": true
+      },
+      {
+        "step": "report_rendered",
+        "ok": true,
+        "wait_s": 4.9
+      },
+      {
+        "step": "history",
+        "ok": true
+      }
+    ],
+    "console_errors": [
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ],
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+    "pass": true
+  }
+]

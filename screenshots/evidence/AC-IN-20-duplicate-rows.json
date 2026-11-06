@@ -1,0 +1,41 @@
+{
+  "batch_task_id": "bch_01M5Q6BDKX7C8S9BP98KGW9Q3T",
+  "status": "completed",
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 10,
+    "degraded": 0,
+    "degraded_review": 0,
+    "failed": 0,
+    "failed_timeout": 0,
+    "cancelled": 0
+  },
+  "distinct_diagnosis_ids": 10,
+  "row_nos": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "diagnosis_ids": [
+    "dx_01M5Q6BDM23VFNFGZ8EVSCPQCQ",
+    "dx_01M5Q6BDM3GG9P7JG3V5F1S7JN",
+    "dx_01M5Q6BDYP7EE6V0ZZSQHJNA3A",
+    "dx_01M5Q6BDYV82BDFZN14SXRF0RH",
+    "dx_01M5Q6BE9MCQ65VHJPHJJEYZ70",
+    "dx_01M5Q6BE9Q5RQK0H4HC08KG445",
+    "dx_01M5Q6BEKM9FDSPZ10DF199A93",
+    "dx_01M5Q6BEKR526PGX7AQBRR3CCK",
+    "dx_01M5Q6BEX8QBCV18ETJ4457APK",
+    "dx_01M5Q6BEXCGC2RAF4EWXZZGHXP"
+  ],
+  "all_have_id": true,
+  "pass": true
+}

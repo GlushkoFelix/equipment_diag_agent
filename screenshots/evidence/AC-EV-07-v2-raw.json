@@ -1,0 +1,422 @@
+[
+  {
+    "sample_id": "EDGE-01",
+    "text": "设备启动后出现间歇性异响，伴随轻微温升，未提供完整运行参数。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-01",
+      "product_type": "L",
+      "air_temp_k": 298.1,
+      "process_temp_k": 308.6,
+      "rotational_speed_rpm": 1500.0,
+      "torque_nm": 40.0,
+      "tool_wear_min": 100.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA10SGGXWB1C14MCNNH4N9",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-01 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：298.1 K\n- 工艺温度：308.6 K\n- 温差：10.5 K\n- 转速：1500.0 rpm\n- 扭矩：40.0 Nm\n- 功率：6283.185 W\n- 刀具磨损：100.0 min\n- 磨损×扭矩：4000.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-02",
+    "text": "主轴在低速段振动明显，声音呈周期性冲击，负载数据缺失。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-02",
+      "product_type": "M",
+      "air_temp_k": 300.5,
+      "process_temp_k": 312.0,
+      "rotational_speed_rpm": 1300.0,
+      "torque_nm": 55.0,
+      "tool_wear_min": 180.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA11SB1NGZF3YXQAF9WAMG",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-02 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：300.5 K\n- 工艺温度：312.0 K\n- 温差：11.5 K\n- 转速：1300.0 rpm\n- 扭矩：55.0 Nm\n- 功率：7487.462 W\n- 刀具磨损：180.0 min\n- 磨损×扭矩：9900.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-03",
+    "text": "联轴器区域有金属摩擦声，停机后手动盘车阻力偏大。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-03",
+      "product_type": "H",
+      "air_temp_k": 302.0,
+      "process_temp_k": 315.0,
+      "rotational_speed_rpm": 1200.0,
+      "torque_nm": 65.0,
+      "tool_wear_min": 220.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA12S57DF23HGCJGKNV17H",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-03 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：302.0 K\n- 工艺温度：315.0 K\n- 温差：13.0 K\n- 转速：1200.0 rpm\n- 扭矩：65.0 Nm\n- 功率：8168.141 W\n- 刀具磨损：220.0 min\n- 磨损×扭矩：14300.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 14300 超过 H 型阈值 13000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-04",
+    "text": "润滑系统压力波动，轴承温度时高时低，未记录功率。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-04",
+      "product_type": "M",
+      "air_temp_k": 296.0,
+      "process_temp_k": 306.0,
+      "rotational_speed_rpm": 1600.0,
+      "torque_nm": 30.0,
+      "tool_wear_min": 20.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA13RZK9WB69B5SPE0AYRG",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-04 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：296.0 K\n- 工艺温度：306.0 K\n- 温差：10.0 K\n- 转速：1600.0 rpm\n- 扭矩：30.0 Nm\n- 功率：5026.548 W\n- 刀具磨损：20.0 min\n- 磨损×扭矩：600.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-05",
+    "text": "冷却液流量不足，加工面出现轻微烧伤，转速数据未采集。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-05",
+      "product_type": "L",
+      "air_temp_k": 299.0,
+      "process_temp_k": 310.0,
+      "rotational_speed_rpm": 1400.0,
+      "torque_nm": 45.0,
+      "tool_wear_min": 120.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA14RXJD4G9RZ1RCGPGQMH",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-05 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：299.0 K\n- 工艺温度：310.0 K\n- 温差：11.0 K\n- 转速：1400.0 rpm\n- 扭矩：45.0 Nm\n- 功率：6597.345 W\n- 刀具磨损：120.0 min\n- 磨损×扭矩：5400.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-06",
+    "text": "设备在换刀后出现短时抖动，随后恢复正常，缺乏扭矩记录。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-06",
+      "product_type": "H",
+      "air_temp_k": 305.0,
+      "process_temp_k": 318.0,
+      "rotational_speed_rpm": 1100.0,
+      "torque_nm": 70.0,
+      "tool_wear_min": 240.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA15RT5PXSZ9BYYSH488DE",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-06 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：305.0 K\n- 工艺温度：318.0 K\n- 温差：13.0 K\n- 转速：1100.0 rpm\n- 扭矩：70.0 Nm\n- 功率：8063.421 W\n- 刀具磨损：240.0 min\n- 磨损×扭矩：16800.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 16800 超过 H 型阈值 13000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-07",
+    "text": "电机电流偶发尖峰，伴随异味，未提供温度与转速。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-07",
+      "product_type": "M",
+      "air_temp_k": 295.5,
+      "process_temp_k": 304.5,
+      "rotational_speed_rpm": 1700.0,
+      "torque_nm": 25.0,
+      "tool_wear_min": 10.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA16RNQCFBQ7YGKZAMD87R",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-07 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：295.5 K\n- 工艺温度：304.5 K\n- 温差：9.0 K\n- 转速：1700.0 rpm\n- 扭矩：25.0 Nm\n- 功率：4450.59 W\n- 刀具磨损：10.0 min\n- 磨损×扭矩：250.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-08",
+    "text": "皮带传动处有打滑声，负载升高时异响加剧。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-08",
+      "product_type": "L",
+      "air_temp_k": 301.0,
+      "process_temp_k": 311.5,
+      "rotational_speed_rpm": 1350.0,
+      "torque_nm": 50.0,
+      "tool_wear_min": 160.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA17RE6ARSBFEKMNEQF75Q",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-08 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：301.0 K\n- 工艺温度：311.5 K\n- 温差：10.5 K\n- 转速：1350.0 rpm\n- 扭矩：50.0 Nm\n- 功率：7068.583 W\n- 刀具磨损：160.0 min\n- 磨损×扭矩：8000.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-09",
+    "text": "液压站噪声增大，压力表指针抖动，未上传完整工艺参数。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-09",
+      "product_type": "M",
+      "air_temp_k": 297.5,
+      "process_temp_k": 307.0,
+      "rotational_speed_rpm": 1550.0,
+      "torque_nm": 35.0,
+      "tool_wear_min": 60.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA18R7H3QTCSAG0W28YRZD",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-09 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：297.5 K\n- 工艺温度：307.0 K\n- 温差：9.5 K\n- 转速：1550.0 rpm\n- 扭矩：35.0 Nm\n- 功率：5681.047 W\n- 刀具磨损：60.0 min\n- 磨损×扭矩：2100.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-10",
+    "text": "导轨润滑不良，进给时出现爬行现象，缺少刀具磨损数据。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-10",
+      "product_type": "H",
+      "air_temp_k": 304.0,
+      "process_temp_k": 316.0,
+      "rotational_speed_rpm": 1150.0,
+      "torque_nm": 68.0,
+      "tool_wear_min": 200.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA19R2WYP16WQ80EZGEPGH",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-10 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：304.0 K\n- 工艺温度：316.0 K\n- 温差：12.0 K\n- 转速：1150.0 rpm\n- 扭矩：68.0 Nm\n- 功率：8189.085 W\n- 刀具磨损：200.0 min\n- 磨损×扭矩：13600.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 13600 超过 H 型阈值 13000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-11",
+    "text": "轴承座手感发热，运行声音沉闷，未记录空气温度。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-11",
+      "product_type": "L",
+      "air_temp_k": 298.5,
+      "process_temp_k": 309.0,
+      "rotational_speed_rpm": 1450.0,
+      "torque_nm": 42.0,
+      "tool_wear_min": 90.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1AQW2S3BK2CET4CE73GC",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-11 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：298.5 K\n- 工艺温度：309.0 K\n- 温差：10.5 K\n- 转速：1450.0 rpm\n- 扭矩：42.0 Nm\n- 功率：6377.433 W\n- 刀具磨损：90.0 min\n- 磨损×扭矩：3780.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-12",
+    "text": "设备在夜间班次频繁报警，白天正常，缺少全部数值特征。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-12",
+      "product_type": "M",
+      "air_temp_k": 303.0,
+      "process_temp_k": 314.0,
+      "rotational_speed_rpm": 1250.0,
+      "torque_nm": 60.0,
+      "tool_wear_min": 210.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1BQP1WKCFE1M32WNAQ49",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-12 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：303.0 K\n- 工艺温度：314.0 K\n- 温差：11.0 K\n- 转速：1250.0 rpm\n- 扭矩：60.0 Nm\n- 功率：7853.982 W\n- 刀具磨损：210.0 min\n- 磨损×扭矩：12600.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 12600 超过 M 型阈值 12000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-13",
+    "text": "齿轮箱出现低频嗡鸣，随转速升高而增强。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-13",
+      "product_type": "L",
+      "air_temp_k": 294.0,
+      "process_temp_k": 303.0,
+      "rotational_speed_rpm": 1800.0,
+      "torque_nm": 20.0,
+      "tool_wear_min": 0.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1CQE9ZYMR3GETTJ6VW7Z",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-13 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：294.0 K\n- 工艺温度：303.0 K\n- 温差：9.0 K\n- 转速：1800.0 rpm\n- 扭矩：20.0 Nm\n- 功率：3769.911 W\n- 刀具磨损：0.0 min\n- 磨损×扭矩：0.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-14",
+    "text": "气动夹具动作迟滞，伴随漏气声，未采集扭矩。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-14",
+      "product_type": "M",
+      "air_temp_k": 299.5,
+      "process_temp_k": 309.5,
+      "rotational_speed_rpm": 1380.0,
+      "torque_nm": 48.0,
+      "tool_wear_min": 140.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1DQSMQP8SHWZA152W1Z1",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-14 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：299.5 K\n- 工艺温度：309.5 K\n- 温差：10.0 K\n- 转速：1380.0 rpm\n- 扭矩：48.0 Nm\n- 功率：6936.637 W\n- 刀具磨损：140.0 min\n- 磨损×扭矩：6720.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-15",
+    "text": "刀柄锥面磨损，加工尺寸漂移，缺少转速与功率。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-15",
+      "product_type": "H",
+      "air_temp_k": 306.0,
+      "process_temp_k": 319.0,
+      "rotational_speed_rpm": 1080.0,
+      "torque_nm": 72.0,
+      "tool_wear_min": 250.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1EQKNF49KAY6J8BC6WJK",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-15 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：306.0 K\n- 工艺温度：319.0 K\n- 温差：13.0 K\n- 转速：1080.0 rpm\n- 扭矩：72.0 Nm\n- 功率：8143.008 W\n- 刀具磨损：250.0 min\n- 磨损×扭矩：18000.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 18000 超过 H 型阈值 13000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-16",
+    "text": "设备运行中偶发急停，复位后可继续，无完整过程数据。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-16",
+      "product_type": "L",
+      "air_temp_k": 297.0,
+      "process_temp_k": 307.5,
+      "rotational_speed_rpm": 1520.0,
+      "torque_nm": 38.0,
+      "tool_wear_min": 70.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1FQCXDEXCT5REAHKG7CW",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-16 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：297.0 K\n- 工艺温度：307.5 K\n- 温差：10.5 K\n- 转速：1520.0 rpm\n- 扭矩：38.0 Nm\n- 功率：6048.613 W\n- 刀具磨损：70.0 min\n- 磨损×扭矩：2660.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-17",
+    "text": "丝杠反向间隙增大，定位精度下降，温度记录缺失。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-17",
+      "product_type": "M",
+      "air_temp_k": 302.5,
+      "process_temp_k": 313.0,
+      "rotational_speed_rpm": 1220.0,
+      "torque_nm": 62.0,
+      "tool_wear_min": 190.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1GQ8JT0A3C73J98R01ZG",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-17 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：302.5 K\n- 工艺温度：313.0 K\n- 温差：10.5 K\n- 转速：1220.0 rpm\n- 扭矩：62.0 Nm\n- 功率：7921.002 W\n- 刀具磨损：190.0 min\n- 磨损×扭矩：11780.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：刀具磨损 190 min 位于 190–300 min，且磨损×扭矩未达 OSF 阈值。\n\n## 鉴别诊断\n候选类型：TWF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-18",
+    "text": "主轴轴承出现高频啸叫，轻载时更明显。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-18",
+      "product_type": "H",
+      "air_temp_k": 300.0,
+      "process_temp_k": 310.5,
+      "rotational_speed_rpm": 1420.0,
+      "torque_nm": 46.0,
+      "tool_wear_min": 110.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1HQ2QKY5VJE85V20EN32",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-18 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：300.0 K\n- 工艺温度：310.5 K\n- 温差：10.5 K\n- 转速：1420.0 rpm\n- 扭矩：46.0 Nm\n- 功率：6840.294 W\n- 刀具磨损：110.0 min\n- 磨损×扭矩：5060.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-19",
+    "text": "设备基础螺栓松动，整机振动加大，缺少磨损记录。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-19",
+      "product_type": "M",
+      "air_temp_k": 296.5,
+      "process_temp_k": 305.5,
+      "rotational_speed_rpm": 1650.0,
+      "torque_nm": 28.0,
+      "tool_wear_min": 30.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1JPYRJ2S1KM8ZKZFHDCT",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-19 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：296.5 K\n- 工艺温度：305.5 K\n- 温差：9.0 K\n- 转速：1650.0 rpm\n- 扭矩：28.0 Nm\n- 功率：4838.053 W\n- 刀具磨损：30.0 min\n- 磨损×扭矩：840.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  },
+  {
+    "sample_id": "EDGE-20",
+    "text": "多台同型号设备中仅此台异响，负载与温升数据不完整。",
+    "features": {
+      "input_type": "form",
+      "device_id": "EDGE-20",
+      "product_type": "L",
+      "air_temp_k": 304.5,
+      "process_temp_k": 315.5,
+      "rotational_speed_rpm": 1180.0,
+      "torque_nm": 66.0,
+      "tool_wear_min": 230.0
+    },
+    "create_status": 202,
+    "diagnosis_id": "dx_01M5SA1KPQ248NH44HVTESZV1P",
+    "status": "succeeded",
+    "primary_type": "未覆盖",
+    "confidence": 0.4,
+    "knowledge_status": "missing",
+    "report": "# EDGE-20 未覆盖 诊断报告\n\n## 结论\n主类型：未覆盖。知识库未覆盖，仅提供未验证假设与通用安全建议\n\n## 置信度\n低置信度（0.40）\n\n## 关键特征\n- 空气温度：304.5 K\n- 工艺温度：315.5 K\n- 温差：11.0 K\n- 转速：1180.0 rpm\n- 扭矩：66.0 Nm\n- 功率：8155.575 W\n- 刀具磨损：230.0 min\n- 磨损×扭矩：15180.0 Nm·min\n\n## 判断依据\n引用知识条目：无（知识库未覆盖）。\n规则命中：磨损×扭矩 15180 超过 L 型阈值 11000。\n\n## 鉴别诊断\n候选类型：OSF。\n\n## 维修建议\n知识库未覆盖当前工况，请按设备手册执行通用安全检查并补充特征后重新诊断。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条目自动生成，仅用于辅助判断，不替代现场检修与设备厂商的技术结论。\n"
+  }
+]

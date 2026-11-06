@@ -1,0 +1,75 @@
+{
+  "diagnosis_id": "dx_01M5Q7G3PF93KV8SFCHTNSXJW4",
+  "status_initial": "waiting_human",
+  "version": 2,
+  "expires_at": null,
+  "interrupt": {
+    "type": "clarification",
+    "payload": {
+      "created_at": "2026-10-24T15:12:04.307Z",
+      "missing_fields": [
+        {
+          "field": "product_type",
+          "label": "产品类型",
+          "unit": null,
+          "example": "M",
+          "reason": "MISSING"
+        },
+        {
+          "field": "air_temp_k",
+          "label": "空气温度",
+          "unit": "K",
+          "example": 298.1,
+          "reason": "MISSING"
+        },
+        {
+          "field": "process_temp_k",
+          "label": "工艺温度",
+          "unit": "K",
+          "example": 308.6,
+          "reason": "MISSING"
+        },
+        {
+          "field": "rotational_speed_rpm",
+          "label": "转速",
+          "unit": "rpm",
+          "example": 1500,
+          "reason": "MISSING"
+        },
+        {
+          "field": "torque_nm",
+          "label": "扭矩",
+          "unit": "Nm",
+          "example": 40,
+          "reason": "MISSING"
+        },
+        {
+          "field": "tool_wear_min",
+          "label": "刀具磨损",
+          "unit": "min",
+          "example": 100,
+          "reason": "MISSING"
+        }
+      ],
+      "partial_features": {},
+      "device_id": "QA-TTL-01"
+    },
+    "expires_at": "2026-10-24T15:13:04.307Z",
+    "review_round": 0,
+    "version": 2
+  },
+  "status_after_75s": "expired",
+  "event_has_expired": true,
+  "event_has_TTL": false,
+  "resume_http": 409,
+  "resume_body": {
+    "error": {
+      "code": "DIAGNOSIS_EXPIRED",
+      "message": "中断已过期，请重新发起诊断",
+      "request_id": "req_01M5Q7JDY2NQWGVBW8QYQB69VH"
+    }
+  },
+  "new_diagnosis_id": "dx_01M5Q7JDY5QZQ1949XDKV7PABE",
+  "new_is_distinct": true,
+  "pass": false
+}

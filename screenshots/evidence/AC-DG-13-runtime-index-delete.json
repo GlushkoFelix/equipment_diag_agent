@@ -1,0 +1,94 @@
+{
+  "tag": "runtime-delete",
+  "diagnosis_id": "dx_01M5Q7Q6Z33CN18ZA0BF62X0N5",
+  "status": "succeeded",
+  "primary_type": "正常",
+  "confidence": 0.95,
+  "knowledge_status": "supported",
+  "retrieval": {
+    "coverage": "covered",
+    "max_score": 0.7074,
+    "top_k": 5,
+    "retry_used": false,
+    "hits": [
+      {
+        "entry_id": "KB-NORM-001",
+        "fault_type": "正常基线",
+        "title": "设备正常运行基线（AI4I）",
+        "snippet": "正常工况基线：工艺温度与空气温度差 temp_diff 不低于 8.6 K，主轴转速不低于 1380 rpm，功率位于 3500 W 至 9000 W 区间，刀具磨损低于 190 min，磨损与扭矩乘积低于对应产品类型的过载阈值。满足以上条",
+        "score": 0.7074,
+        "evidence": {
+          "entry_id": "KB-NORM-001",
+          "title": "设备正常运行基线（AI4I）",
+          "fault_type": "正常基线",
+          "feature": "temp_diff",
+          "value": 10.5,
+          "unit": "K"
+        }
+      },
+      {
+        "entry_id": "KB-NORM-002",
+        "fault_type": "正常基线",
+        "title": "正常状态下的温度与功率特征",
+        "snippet": "健康设备在稳定负载下温差通常维持在 8.6 K 以上，功率随转速与扭矩线性变化。若温差、转速、功率与磨损均在正常区间，视为无故障证据，报告应引用正常基线条目并说明数据完整性。",
+        "score": 0.6013,
+        "evidence": {
+          "entry_id": "KB-NORM-002",
+          "title": "正常状态下的温度与功率特征",
+          "fault_type": "正常基线",
+          "feature": "temp_diff",
+          "value": 10.5,
+          "unit": "K"
+        }
+      },
+      {
+        "entry_id": "KB-TWF-001",
+        "fault_type": "TWF",
+        "title": "刀具磨损故障 TWF 机理",
+        "snippet": "刀具磨损故障（Tool Wear Failure）表现为刀具磨损处于 190–300 min 区间，且磨损扭矩乘积未达到产品类型 OSF 阈值。判定后应建议检查刀具寿命与换刀计划。",
+        "score": 0.2526,
+        "evidence": {
+          "entry_id": "KB-TWF-001",
+          "title": "刀具磨损故障 TWF 机理",
+          "fault_type": "TWF",
+          "feature": "tool_wear_min",
+          "value": 100.0,
+          "unit": "min"
+        }
+      },
+      {
+        "entry_id": "KB-HDF-002",
+        "fault_type": "HDF",
+        "title": "HDF 判别与排除要点",
+        "snippet": "HDF 判别应核对 temp_diff 与 rotational_speed_rpm。若工艺温度低于空气温度（TEMP_INVERSION），HDF 规则不生效并扣减置信度，报告应在数据质量章节说明温差倒挂，不得强行归因散热故障。",
+        "score": 0.2333,
+        "evidence": {
+          "entry_id": "KB-HDF-002",
+          "title": "HDF 判别与排除要点",
+          "fault_type": "HDF",
+          "feature": "temp_diff",
+          "value": 10.5,
+          "unit": "K"
+        }
+      },
+      {
+        "entry_id": "KB-TWF-002",
+        "fault_type": "TWF",
+        "title": "TWF 维护建议",
+        "snippet": "疑似 TWF 时建议按刀具寿命台账核对累计切削时间，检查刃口崩刃与工件表面质量，安排换刀并复测振动与扭矩；若磨损扭矩乘积接近 OSF 阈值，应同步评估过载风险。",
+        "score": 0.201,
+        "evidence": {
+          "entry_id": "KB-TWF-002",
+          "title": "TWF 维护建议",
+          "fault_type": "TWF",
+          "feature": "tool_wear_min",
+          "value": 100.0,
+          "unit": "min"
+        }
+      }
+    ]
+  },
+  "report_http": 200,
+  "declares_uncovered": false,
+  "report_head": "# QA-KB-runtime-delete 正常 诊断报告\n\n## 结论\n主类型：正常。温度、转速、功率与磨损均处于正常基线区间，无故障规则命中\n\n## 置信度\n高置信度（0.95）\n\n## 关键特征\n- 空气温度：298.1 K\n- 工艺温度：308.6 K\n- 温差：10.5 K\n- 转速：1500.0 rpm\n- 扭矩：40.0 Nm\n- 功率：6283.185 W\n- 刀具磨损：100.0 min\n- 磨损×扭矩：4000.0 Nm·min\n\n## 判断依据\n引用知识条目：KB-NORM-001《设备正常运行基线（AI4I）》、KB-NORM-002《正常状态下的温度与功率特征》、KB-TWF-001《刀具磨损故障 TWF 机理》、KB-HDF-002《HDF 判别与排除要点》、KB-TWF-002《TWF 维护建议》。\n规则命中：无。\n\n## 鉴别诊断\n候选类型：无。\n\n## 维修建议\n保持当前工况，按计划点检温度、转速、功率与刀具磨损趋势。\n\n## 数据质量与假设\n- 数据完整，未触发质量标记或假设。\n\n## 免责声明\n> 本报告由设备故障诊断智能体基于输入数据与知识库条"
+}

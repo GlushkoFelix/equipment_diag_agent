@@ -1,0 +1,19 @@
+{
+  "batch_task_id": "bch_01M5Q64RH5FXF3XEEERKJZBX6K",
+  "status": "partially_failed",
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 207,
+    "degraded": 0,
+    "degraded_review": 32,
+    "failed": 1,
+    "failed_timeout": 0,
+    "cancelled": 0
+  },
+  "executed": 240,
+  "success": 239,
+  "success_rate": 0.9958333333333333,
+  "export_status": 200,
+  "export_bytes": 21806
+}

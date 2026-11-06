@@ -1,0 +1,107 @@
+{
+  "diagnosis_id": "dx_01M5Q7G3PF93KV8SFCHTNSXJW4",
+  "ttl_config_minutes": 1,
+  "scan_config_seconds": 5,
+  "created_at": null,
+  "status_initial": "waiting_human",
+  "status_after_75s": "expired",
+  "events": [
+    {
+      "seq": 1,
+      "type": "interrupt",
+      "created_at": "2026-10-24T15:12:04.322Z",
+      "payload": {
+        "interrupt_type": "clarification",
+        "payload": {
+          "created_at": "2026-10-24T15:12:04.307Z",
+          "missing_fields": [
+            {
+              "field": "product_type",
+              "label": "产品类型",
+              "unit": null,
+              "reason": "MISSING",
+              "example": "M",
+              "message": "产品类型缺失"
+            },
+            {
+              "field": "air_temp_k",
+              "label": "空气温度",
+              "unit": "K",
+              "reason": "MISSING",
+              "example": 298.1,
+              "message": "空气温度缺失"
+            },
+            {
+              "field": "process_temp_k",
+              "label": "工艺温度",
+              "unit": "K",
+              "reason": "MISSING",
+              "example": 308.6,
+              "message": "工艺温度缺失"
+            },
+            {
+              "field": "rotational_speed_rpm",
+              "label": "转速",
+              "unit": "rpm",
+              "reason": "MISSING",
+              "example": 1500,
+              "message": "转速缺失"
+            },
+            {
+              "field": "torque_nm",
+              "label": "扭矩",
+              "unit": "Nm",
+              "reason": "MISSING",
+              "example": 40,
+              "message": "扭矩缺失"
+            },
+            {
+              "field": "tool_wear_min",
+              "label": "刀具磨损",
+              "unit": "min",
+              "reason": "MISSING",
+              "example": 100,
+              "message": "刀具磨损缺失"
+            }
+          ],
+          "partial_features": {},
+          "device_id": "QA-TTL-01"
+        },
+        "expires_at": "2026-10-24T15:13:04.307Z",
+        "review_round": 0,
+        "version": 2
+      }
+    },
+    {
+      "seq": 2,
+      "type": "status",
+      "created_at": "2026-10-24T15:12:04.322Z",
+      "payload": {
+        "from": "running",
+        "to": "waiting_human",
+        "reason": "clarification",
+        "version": 2
+      }
+    },
+    {
+      "seq": 3,
+      "type": "expired",
+      "created_at": "2026-10-24T15:13:08.905Z",
+      "payload": {
+        "expires_at": "2026-10-24T15:13:04.307Z",
+        "reason": "TTL_EXCEEDED",
+        "version": 3
+      }
+    }
+  ],
+  "expired_event_reason": "TTL_EXCEEDED",
+  "expired_event_at": "2026-10-24T15:13:08.905Z",
+  "resume_http": 409,
+  "resume_error": {
+    "code": "DIAGNOSIS_EXPIRED",
+    "message": "中断已过期，请重新发起诊断",
+    "request_id": "req_01M5Q7JDY2NQWGVBW8QYQB69VH"
+  },
+  "new_diagnosis_distinct": true,
+  "pass": true
+}

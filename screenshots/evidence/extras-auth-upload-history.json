@@ -1,0 +1,148 @@
+{
+  "AC-US-01": {
+    "register_http": 201,
+    "body_keys": [
+      "user"
+    ],
+    "login_http": 200,
+    "me": {
+      "user": {
+        "user_id": "usr_0000000004",
+        "username": "qa_55101",
+        "created_at": "2026-10-24T15:18:21.330Z",
+        "last_login_at": "2026-10-24T15:18:21.593Z"
+      }
+    },
+    "pass": true,
+    "note": "/auth/me 返回 user 包裹结构"
+  },
+  "AC-US-02": {
+    "http": 409,
+    "error": {
+      "code": "USERNAME_TAKEN",
+      "message": "用户名已存在",
+      "request_id": "req_01M5Q7VM5FK8VHEZJMRJRF9VGQ"
+    },
+    "pass": true,
+    "note": "错误码为 USERNAME_TAKEN（AC 未规定错误码名，仅要求拒绝重复注册）"
+  },
+  "AC-US-04": {
+    "wrong_pwd": [
+      401,
+      {
+        "code": "AUTH_INVALID_CREDENTIALS",
+        "message": "用户名或密码错误",
+        "request_id": "req_01M5Q7VMD7CXKPAXW6RDGS6X2F"
+      }
+    ],
+    "no_user": [
+      401,
+      {
+        "code": "AUTH_INVALID_CREDENTIALS",
+        "message": "用户名或密码错误",
+        "request_id": "req_01M5Q7VMNWXMK5RBYYWZNHVXRR"
+      }
+    ],
+    "unified_message": true,
+    "pass": true
+  },
+  "AC-US-05": {
+    "http": 401,
+    "error": {
+      "code": "AUTH_REQUIRED",
+      "message": "请先登录",
+      "request_id": "req_01M5Q7VMNZQCXYQTW3SPKECWFR"
+    },
+    "pass": true
+  },
+  "AC-IN-04-rows": {
+    "http": 422,
+    "error": {
+      "code": "CSV_ROW_LIMIT_EXCEEDED",
+      "message": "CSV 数据行最多 500 行",
+      "request_id": "req_01M5Q7VMY8WGPV9CHZ9P3WS4F8"
+    }
+  },
+  "AC-IN-04-size": {
+    "http": 413,
+    "error": {
+      "code": "FILE_TOO_LARGE",
+      "message": "文件超过 5MB 上限",
+      "request_id": "req_01M5Q7VMYZQRG1VAPG5C3BKEXZ"
+    }
+  },
+  "AC-IN-04": {
+    "pass": true,
+    "rows_http": 422,
+    "size_http": 413
+  },
+  "AC-SE-02": {
+    "http": 415,
+    "error": {
+      "code": "FILE_TYPE_NOT_ALLOWED",
+      "message": "仅支持 .csv 文件",
+      "request_id": "req_01M5Q7VN0HYVTPKF3Z05WXH97M"
+    },
+    "pass": true
+  },
+  "AC-IN-02": {
+    "http": 201,
+    "suggested_mapping": {
+      "device_id": "设备编号",
+      "product_type": "产品类型",
+      "air_temp_k": "空气温度",
+      "process_temp_k": "工艺温度",
+      "rotational_speed_rpm": "转速",
+      "torque_nm": "扭矩",
+      "tool_wear_min": "刀具磨损"
+    },
+    "headers": [
+      "设备编号",
+      "产品类型",
+      "空气温度",
+      "工艺温度",
+      "转速",
+      "扭矩",
+      "刀具磨损"
+    ],
+    "row_count": 1,
+    "pass": true
+  },
+  "AC-IN-17": {
+    "http_out_of_range": 422,
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "row_no 超出范围",
+      "request_id": "req_01M5Q7WB2C2MT9DS1MPXDS5P29",
+      "details": {
+        "fields": [
+          {
+            "field": "row_no",
+            "reason": "OUT_OF_RANGE"
+          }
+        ]
+      }
+    },
+    "http_row1": 200,
+    "rows_row1": 0,
+    "pass": true
+  },
+  "AC-HS-01": {
+    "http": 200,
+    "page": 1,
+    "page_size": 5,
+    "total": 16,
+    "items": 5,
+    "pass": true
+  },
+  "AC-HS-04": {
+    "http": 404,
+    "error": {
+      "code": "DIAGNOSIS_NOT_FOUND",
+      "message": "诊断不存在或无权访问",
+      "request_id": "req_01M5Q7VNE7FSCDM1P8A864GMY2"
+    },
+    "target": "dx_01M5Q6E0TXJ4Q0D6WHPHZN74AA",
+    "pass": true
+  }
+}

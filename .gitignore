@@ -1,0 +1,45 @@
+# ===== 密钥与本地配置（严禁提交）=====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.venv*/Scripts/
+
+# ===== 前端 =====
+node_modules/
+frontend/dist/
+dist/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== 本地模型权重（BGE-M3 约 2.2GB，超出仓库限制，需自行下载）=====
+models/
+
+# ===== 运行时数据（上传文件、批处理工作目录）=====
+storage/uploads/
+storage/batches/
+
+# ===== 运行时数据库与检查点 =====
+storage/*.db
+storage/*.db-wal
+storage/*.db-shm
+storage/*.sqlite3
+storage/*.sqlite3-wal
+storage/*.sqlite3-shm
+
+# ===== 编辑器 / 工具临时目录 =====
+.vscode/
+.idea/
+.screenshots/
+.DS_Store
+Thumbs.db

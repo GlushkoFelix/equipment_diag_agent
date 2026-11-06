@@ -1,0 +1,13 @@
+{
+  "batch_task_id": "bch_01M6G24X77B4WVFWD15SH2KRFF",
+  "statuses": [
+    "succeeded",
+    "degraded",
+    "degraded_review",
+    "failed",
+    "failed_timeout",
+    "cancelled"
+  ],
+  "degraded_review_summary": "待人工复核（批量模式）：HDF 诊断报告",
+  "escaped_device_id": "'=2+2"
+}

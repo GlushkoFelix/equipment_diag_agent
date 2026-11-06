@@ -1,0 +1,16 @@
+{
+  "batch_task_id": "bch_01M6G250R42A1A4QDXXPTA8569",
+  "exported_device_ids": [
+    "'=cmd",
+    "'+SUM(1)",
+    "'-1+1",
+    "'@SUM(1)",
+    "SAFE-1"
+  ],
+  "forged_extension_status": 415,
+  "forged_extension_error": {
+    "code": "FILE_TYPE_NOT_ALLOWED",
+    "message": "仅支持 .csv 文件",
+    "request_id": "req_01M6G250T9EMSJHFWAWDHGTCW0"
+  }
+}

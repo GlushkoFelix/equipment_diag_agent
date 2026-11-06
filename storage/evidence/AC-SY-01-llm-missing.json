@@ -1,0 +1,21 @@
+{
+  "health_dependencies": {
+    "database": "ok",
+    "checkpoint_store": "ok",
+    "vector_index": "ok",
+    "embedding_model": "degraded",
+    "embedding_reason": "fallback:hash-ngram-512",
+    "llm_config": "missing",
+    "llm_config_missing": "EDG_DEEPSEEK_API_KEY"
+  },
+  "health_status": "degraded",
+  "history_status": 200,
+  "history_total": 0,
+  "diagnosis_status": 503,
+  "diagnosis_error": {
+    "code": "LLM_NOT_CONFIGURED",
+    "message": "未配置 DeepSeek Key，无法发起诊断",
+    "request_id": "req_01M6G2514NA77QBHBRPDNK96CW"
+  },
+  "health_after_diagnosis": 200
+}

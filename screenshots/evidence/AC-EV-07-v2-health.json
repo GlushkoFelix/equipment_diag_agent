@@ -1,0 +1,13 @@
+{
+  "status": "degraded",
+  "version": "1.0.0",
+  "checked_at": "2026-10-25T10:35:20.719Z",
+  "dependencies": {
+    "database": "ok",
+    "checkpoint_store": "ok",
+    "vector_index": "missing",
+    "embedding_model": "ok",
+    "embedding_reason": "显式使用开发/测试回退后端 hash-ngram-512",
+    "llm_config": "ok"
+  }
+}

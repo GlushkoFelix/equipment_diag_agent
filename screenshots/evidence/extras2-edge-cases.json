@@ -1,0 +1,77 @@
+{
+  "AC-US-06": {
+    "attempts": [
+      [
+        401,
+        null
+      ],
+      [
+        401,
+        null
+      ],
+      [
+        401,
+        null
+      ],
+      [
+        401,
+        null
+      ],
+      [
+        423,
+        "300"
+      ]
+    ],
+    "correct_after_lock_http": 423,
+    "retry_after": "299",
+    "error": {
+      "code": "AUTH_LOCKED",
+      "message": "账号已锁定，请 299 秒后重试",
+      "request_id": "req_01M5Q883GEDSPMG78AB5JZQD4R"
+    },
+    "pass": true
+  },
+  "AC-IN-16": {
+    "http": 422,
+    "body": {
+      "error": {
+        "code": "CSV_HEADER_INVALID",
+        "message": "表头为空、重复或错位",
+        "request_id": "req_01M5Q883SZ4A6VGE1NQ25REAX8"
+      }
+    },
+    "pass": true
+  },
+  "AC-HS-03": {
+    "http": 409,
+    "error": {
+      "code": "DIAGNOSIS_STATE_CONFLICT",
+      "message": "批量来源诊断不允许单独删除",
+      "request_id": "req_01M5Q883T28Q581664GEQESC73"
+    },
+    "diagnosis_id": "dx_01M5Q64RJB9D2K2SG4Z3WB9N2D",
+    "pass": true
+  },
+  "AC-HS-05": {
+    "export_columns": [
+      "row_no",
+      "device_id",
+      "primary_type",
+      "confidence",
+      "status",
+      "report_summary",
+      "duration_ms",
+      "error_field",
+      "error_code"
+    ],
+    "observed_statuses": [
+      "succeeded",
+      "degraded_review",
+      "failed",
+      "cancelled",
+      "timed_out"
+    ],
+    "pass": true,
+    "note": "批量导出含 status/error_code 列；实际观测到 5 种状态，expired 仅单条链路"
+  }
+}

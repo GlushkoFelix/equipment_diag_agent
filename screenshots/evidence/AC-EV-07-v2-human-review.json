@@ -1,0 +1,67 @@
+{
+  "ac": "AC-EV-07",
+  "kpi": "KPI-05",
+  "generated_at": "2026-10-26",
+  "samples_source": "AC-EV-07-v2-raw.json",
+  "prerequisite_evidence": "AC-EV-07-v2-health.json",
+  "sample_count": 20,
+  "knowledge_status_missing": 20,
+  "reviewers": [
+    {
+      "id": "A",
+      "display_name": "小A",
+      "identity_type": "internal_codename",
+      "signed_at": "2026-10-26",
+      "form": "AC-EV-07-v2-review-form-A.md",
+      "check1_yes": 0,
+      "check2_no": 0,
+      "fabricated": 0
+    },
+    {
+      "id": "B",
+      "display_name": "小B",
+      "identity_type": "internal_codename",
+      "signed_at": "2026-10-26",
+      "form": "AC-EV-07-v2-review-form-B.md",
+      "check1_yes": 3,
+      "check2_no": 0,
+      "fabricated": 0
+    }
+  ],
+  "judgment_source": "两名自然人（内部代号 A、B）分别独立评审并签署，逐条判定以两份签字表为准",
+  "rows": [
+    { "sample_id": "EDGE-01", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-02", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-03", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-04", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-05", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-06", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": true, "B_check2": true, "disagreement": true },
+    { "sample_id": "EDGE-07", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-08", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-09", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-10", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-11", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-12", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-13", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-14", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-15", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": true, "B_check2": true, "disagreement": true },
+    { "sample_id": "EDGE-16", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-17", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-18", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-19", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": false, "B_check2": true, "disagreement": false },
+    { "sample_id": "EDGE-20", "ai_pre_check1": false, "ai_pre_check2": true, "A_check1": false, "A_check2": true, "B_check1": true, "B_check2": true, "disagreement": true }
+  ],
+  "disagreements": [
+    { "sample_id": "EDGE-06", "A": { "check1": false, "check2": true }, "B": { "check1": true, "check2": true }, "reason": "候选类型 OSF，超阈 29.2%；A 按结论节字面口径记否，B 按实质指向口径记是", "adjudicated": { "check1": false, "check2": true, "fabricated": false } },
+    { "sample_id": "EDGE-15", "A": { "check1": false, "check2": true }, "B": { "check1": true, "check2": true }, "reason": "候选类型 OSF，超阈 38.5%；口径差异同上", "adjudicated": { "check1": false, "check2": true, "fabricated": false } },
+    { "sample_id": "EDGE-20", "A": { "check1": false, "check2": true }, "B": { "check1": true, "check2": true }, "reason": "候选类型 OSF，超阈 38.0%；口径差异同上", "adjudicated": { "check1": false, "check2": true, "fabricated": false } }
+  ],
+  "adjudicator": { "id": "P", "role": "项目负责人", "decided_at": "2026-10-26", "decision": "采纳 A 表保守口径：判定 1 记否、判定 2 记是，不记捏造" },
+  "fabricated_total": 0,
+  "fabrication_rate": 0.0,
+  "kpi_05_pass": true,
+  "human_reviewers_verified": true,
+  "human_reviewers_verified_note": "项目方 2026-10-26 确认：小A（代号 A）、小B（代号 B）为两名不同自然人，分别独立完成 20 条 × 2 项判定",
+  "meets_ac_ev_07": true,
+  "blocking_items": []
+}

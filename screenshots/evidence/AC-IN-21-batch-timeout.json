@@ -1,0 +1,57 @@
+{
+  "batch_task_id": "bch_01M5Q71EJTHQX695C38VBYBH0D",
+  "status": "timed_out",
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 12,
+    "degraded": 0,
+    "degraded_review": 0,
+    "failed": 0,
+    "failed_timeout": 0,
+    "cancelled": 8
+  },
+  "elapsed_s": 63.1,
+  "cancelled_rows": 8,
+  "cancelled_sample": [
+    {
+      "row_id": "row_01M5Q71EJTNK3B3QEAFF9T4S13",
+      "row_no": 13,
+      "device_id": null,
+      "status": "cancelled",
+      "diagnosis_id": null,
+      "report_summary": null,
+      "auto_review": false,
+      "duration_ms": null,
+      "error_field": null,
+      "error_code": "TASK_TIMEOUT"
+    },
+    {
+      "row_id": "row_01M5Q71EJTEDXJQXSYZMF0EC9Z",
+      "row_no": 14,
+      "device_id": null,
+      "status": "cancelled",
+      "diagnosis_id": null,
+      "report_summary": null,
+      "auto_review": false,
+      "duration_ms": null,
+      "error_field": null,
+      "error_code": "TASK_TIMEOUT"
+    },
+    {
+      "row_id": "row_01M5Q71EJTXA6R5PKYMRRNK5DA",
+      "row_no": 15,
+      "device_id": null,
+      "status": "cancelled",
+      "diagnosis_id": null,
+      "report_summary": null,
+      "auto_review": false,
+      "duration_ms": null,
+      "error_field": null,
+      "error_code": "TASK_TIMEOUT"
+    }
+  ],
+  "cancel_reason_has_task_timeout": true,
+  "running_rows_finished": 12,
+  "pass": true
+}

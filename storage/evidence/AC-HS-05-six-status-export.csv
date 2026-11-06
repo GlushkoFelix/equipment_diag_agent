@@ -1,0 +1,7 @@
+﻿"row_no","device_id","primary_type","confidence","status","report_summary","duration_ms","error_field","error_code"
+"1","HS05-1","HDF","0.9375","succeeded","HS05 报告 1","1","",""
+"2","HS05-2","HDF","0.9375","degraded","HS05 报告 2","0","",""
+"3","HS05-3","HDF","0.9375","degraded_review","待人工复核（批量模式）：HDF 诊断报告","1","",""
+"4","HS05-4","HDF","0.9375","failed","","0","",""
+"5","HS05-5","HDF","0.9375","failed_timeout","","0","","TASK_TIMEOUT"
+"6","'=2+2","HDF","0.9375","cancelled","","0","",""

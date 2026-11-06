@@ -1,0 +1,46 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "params": {
+        "chunk_size": 400,
+        "overlap": 50,
+        "top_k": 5
+      },
+      "top5_hit_rate": 1.0,
+      "sample_total": 50,
+      "kb_version": "kb_tuning_c400_o50",
+      "created_at": "2026-10-26T08:09:43.960Z",
+      "backend": "hash"
+    },
+    {
+      "run": 2,
+      "params": {
+        "chunk_size": 200,
+        "overlap": 20,
+        "top_k": 8
+      },
+      "top5_hit_rate": 1.0,
+      "sample_total": 50,
+      "kb_version": "kb_tuning_c200_o20",
+      "created_at": "2026-10-26T08:09:44.017Z",
+      "backend": "hash"
+    }
+  ],
+  "delta": 0.0,
+  "consistent": true,
+  "repeat": {
+    "run": 1,
+    "params": {
+      "chunk_size": 400,
+      "overlap": 50,
+      "top_k": 5
+    },
+    "top5_hit_rate": 1.0,
+    "sample_total": 50,
+    "kb_version": "kb_tuning_c400_o50",
+    "created_at": "2026-10-26T08:09:44.062Z",
+    "backend": "hash"
+  },
+  "params_changed": true
+}

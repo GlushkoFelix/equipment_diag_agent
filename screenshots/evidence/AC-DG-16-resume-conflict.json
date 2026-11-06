@@ -1,0 +1,357 @@
+{
+  "attempts": [
+    {
+      "diagnosis_id": "dx_01M5Q6DYT5K4WAPM9SQH7FW456",
+      "create": 202,
+      "status_before": "waiting_human",
+      "version": 2,
+      "interrupt": {
+        "type": "review",
+        "payload": {
+          "created_at": "2026-10-24T14:53:25.498Z",
+          "primary_type": "OSF",
+          "secondary_types": [
+            "HDF"
+          ],
+          "confidence": 0.795,
+          "confidence_level": "medium",
+          "confidence_breakdown": {
+            "rule": 0.7,
+            "coverage": 1.0,
+            "llm_self": 0.6,
+            "completeness": 1.0,
+            "penalties": 0.0,
+            "total": 0.795
+          },
+          "evidence_refs": [
+            {
+              "entry_id": "KB-TWF-001",
+              "title": "刀具磨损故障 TWF 机理",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-NORM-001",
+              "title": "设备正常运行基线（AI4I）",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-HDF-001",
+              "title": "散热故障 HDF 机理",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-NORM-003",
+              "title": "正常磨损与过载边界说明",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-TWF-002",
+              "title": "TWF 维护建议",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-HDF-002",
+              "title": "HDF 判别与排除要点",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-OSF-001",
+              "title": "过载故障 OSF 机理",
+              "fault_type": "OSF",
+              "feature": "wear_torque",
+              "value": 13200.0,
+              "unit": "Nm·min"
+            }
+          ],
+          "reason": "磨损×扭矩 13200 超过 M 型阈值 12000",
+          "missing_fields": [],
+          "review_round": 1
+        },
+        "expires_at": "2026-10-24T15:23:25.498Z",
+        "review_round": 1,
+        "version": 2
+      },
+      "parallel": {
+        "A": {
+          "status": 200,
+          "error": null,
+          "status_after": "succeeded",
+          "version_after": 4
+        },
+        "B": {
+          "status": 409,
+          "error": {
+            "code": "DIAGNOSIS_STATE_CONFLICT",
+            "message": "当前状态不允许恢复",
+            "request_id": "req_01M5Q6DZQ740G9FKF0WPGY0ZG4"
+          },
+          "status_after": null,
+          "version_after": null
+        }
+      },
+      "codes": [
+        200,
+        409
+      ],
+      "error_codes": [
+        null,
+        "DIAGNOSIS_STATE_CONFLICT"
+      ],
+      "pass": false
+    },
+    {
+      "diagnosis_id": "dx_01M5Q6DZQAK8RQNQD2FAXZQWFZ",
+      "create": 202,
+      "status_before": "waiting_human",
+      "version": 2,
+      "interrupt": {
+        "type": "review",
+        "payload": {
+          "created_at": "2026-10-24T14:53:26.433Z",
+          "primary_type": "OSF",
+          "secondary_types": [
+            "HDF"
+          ],
+          "confidence": 0.795,
+          "confidence_level": "medium",
+          "confidence_breakdown": {
+            "rule": 0.7,
+            "coverage": 1.0,
+            "llm_self": 0.6,
+            "completeness": 1.0,
+            "penalties": 0.0,
+            "total": 0.795
+          },
+          "evidence_refs": [
+            {
+              "entry_id": "KB-TWF-001",
+              "title": "刀具磨损故障 TWF 机理",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-NORM-001",
+              "title": "设备正常运行基线（AI4I）",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-HDF-001",
+              "title": "散热故障 HDF 机理",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-NORM-003",
+              "title": "正常磨损与过载边界说明",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-TWF-002",
+              "title": "TWF 维护建议",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-HDF-002",
+              "title": "HDF 判别与排除要点",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-OSF-001",
+              "title": "过载故障 OSF 机理",
+              "fault_type": "OSF",
+              "feature": "wear_torque",
+              "value": 13200.0,
+              "unit": "Nm·min"
+            }
+          ],
+          "reason": "磨损×扭矩 13200 超过 M 型阈值 12000",
+          "missing_fields": [],
+          "review_round": 1
+        },
+        "expires_at": "2026-10-24T15:23:26.433Z",
+        "review_round": 1,
+        "version": 2
+      },
+      "parallel": {
+        "B": {
+          "status": 200,
+          "error": null,
+          "status_after": "succeeded",
+          "version_after": 4
+        },
+        "A": {
+          "status": 409,
+          "error": {
+            "code": "DIAGNOSIS_STATE_CONFLICT",
+            "message": "当前状态不允许恢复",
+            "request_id": "req_01M5Q6E0TRMD16KN0TWZAPY547"
+          },
+          "status_after": null,
+          "version_after": null
+        }
+      },
+      "codes": [
+        200,
+        409
+      ],
+      "error_codes": [
+        null,
+        "DIAGNOSIS_STATE_CONFLICT"
+      ],
+      "pass": false
+    },
+    {
+      "diagnosis_id": "dx_01M5Q6E0TXJ4Q0D6WHPHZN74AA",
+      "create": 202,
+      "status_before": "waiting_human",
+      "version": 2,
+      "interrupt": {
+        "type": "review",
+        "payload": {
+          "created_at": "2026-10-24T14:53:27.584Z",
+          "primary_type": "OSF",
+          "secondary_types": [
+            "HDF"
+          ],
+          "confidence": 0.795,
+          "confidence_level": "medium",
+          "confidence_breakdown": {
+            "rule": 0.7,
+            "coverage": 1.0,
+            "llm_self": 0.6,
+            "completeness": 1.0,
+            "penalties": 0.0,
+            "total": 0.795
+          },
+          "evidence_refs": [
+            {
+              "entry_id": "KB-TWF-001",
+              "title": "刀具磨损故障 TWF 机理",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-NORM-001",
+              "title": "设备正常运行基线（AI4I）",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-HDF-001",
+              "title": "散热故障 HDF 机理",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-NORM-003",
+              "title": "正常磨损与过载边界说明",
+              "fault_type": "正常基线",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-TWF-002",
+              "title": "TWF 维护建议",
+              "fault_type": "TWF",
+              "feature": "tool_wear_min",
+              "value": 240.0,
+              "unit": "min"
+            },
+            {
+              "entry_id": "KB-HDF-002",
+              "title": "HDF 判别与排除要点",
+              "fault_type": "HDF",
+              "feature": "temp_diff",
+              "value": 8.0,
+              "unit": "K"
+            },
+            {
+              "entry_id": "KB-OSF-001",
+              "title": "过载故障 OSF 机理",
+              "fault_type": "OSF",
+              "feature": "wear_torque",
+              "value": 13200.0,
+              "unit": "Nm·min"
+            }
+          ],
+          "reason": "磨损×扭矩 13200 超过 M 型阈值 12000",
+          "missing_fields": [],
+          "review_round": 1
+        },
+        "expires_at": "2026-10-24T15:23:27.584Z",
+        "review_round": 1,
+        "version": 2
+      },
+      "parallel": {
+        "B": {
+          "status": 409,
+          "error": {
+            "code": "DIAGNOSIS_STATE_CONFLICT",
+            "message": "当前状态不允许恢复",
+            "request_id": "req_01M5Q6E1Q1TC0GRRZVEMTQVZS6"
+          },
+          "status_after": null,
+          "version_after": null
+        },
+        "A": {
+          "status": 200,
+          "error": null,
+          "status_after": "succeeded",
+          "version_after": 4
+        }
+      },
+      "codes": [
+        200,
+        409
+      ],
+      "error_codes": [
+        "DIAGNOSIS_STATE_CONFLICT",
+        null
+      ],
+      "pass": false
+    }
+  ],
+  "pass": false,
+  "note": "AC-DG-16 要求 200 + 409 VERSION_CONFLICT；实际错误码以观测为准"
+}

@@ -1,0 +1,27 @@
+{
+  "batch": {
+    "batch_task_id": "bch_01M5Q64RH5FXF3XEEERKJZBX6K",
+    "file_name": "batch240.csv",
+    "total_rows": 240,
+    "status": "partially_failed",
+    "default_device_id": null,
+    "counts": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 207,
+      "degraded": 0,
+      "degraded_review": 32,
+      "failed": 1,
+      "failed_timeout": 0,
+      "cancelled": 0
+    },
+    "completed_rows": 240,
+    "progress": 1.0,
+    "cancel_requested": false,
+    "timeout_deadline": "2026-10-24T15:48:23.845Z",
+    "created_at": "2026-10-24T14:48:23.845Z",
+    "started_at": "2026-10-24T14:48:23.877Z",
+    "finished_at": "2026-10-24T14:49:09.954Z",
+    "error_code": null
+  }
+}

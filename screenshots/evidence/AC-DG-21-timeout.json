@@ -1,0 +1,162 @@
+[
+  {
+    "node": "parse_input",
+    "diagnosis_id": "dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3",
+    "create_http": 202,
+    "elapsed_s": 16.48,
+    "status": "failed_timeout",
+    "error": {
+      "code": "TIMEOUT",
+      "message": "诊断执行失败，请查看错误码",
+      "node": null,
+      "recoverable": true
+    },
+    "has_report": false,
+    "report_http": 409,
+    "trace_steps": [
+      [
+        "timeout_finalize",
+        "timeout",
+        "全局 15s 熔断"
+      ]
+    ],
+    "sse_has_terminal": true,
+    "sse_tail": "\"device_id\":\"QA-TIMEOUT-parse_input\",\"product_type\":\"M\",\"air_temp_k\":298.1,\"process_temp_k\":308.6,\"rotational_speed_rpm\":1500.0,\"torque_nm\":40.0,\"tool_wear_min\":100.0},\"derived\":{\"temp_diff\":10.5,\"power_w\":6283.185,\"wear_torque\":4000.0},\"completeness\":1.0,\"missing_fields\":[],\"assumptions\":[],\"data_quality_flags\":[]},\"retrieval\":null,\"retry_count\":0,\"review_round\":0,\"report_retry_count\":0,\"report_elements_check\":null,\"duration_ms\":0,\"interrupt\":null,\"human_decision\":null,\"auto_review\":false,\"report\":null,\"report_meta\":null,\"trace_steps\":[],\"timings\":{\"total_ms\":0,\"nodes\":{}},\"error\":null,\"batch\":null,\"created_at\":\"2026-10-24T14:50:48.674Z\",\"started_at\":\"2026-10-24T14:50:48.674Z\",\"finished_at\":null}}\n\nevent: heartbeat\ndata: {\"seq\":null,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3\",\"type\":\"heartbeat\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:03.914Z\",\"payload\":{\"server_time\":\"2026-10-24T14:51:03.914Z\"}}\n\nid: 1\nevent: status\ndata: {\"seq\":1,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q695Z2N8Q1RV2Z5BX4Y6X3\",\"type\":\"status\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:04.679Z\",\"payload\":{\"from\":\"running\",\"to\":\"failed_timeout\",\"reason\":\"finalize\",\"version\":2}}",
+    "pass": true
+  },
+  {
+    "node": "retrieve",
+    "diagnosis_id": "dx_01M5Q69P21691Y5ABZFHXPBAD8",
+    "create_http": 202,
+    "elapsed_s": 16.47,
+    "status": "failed_timeout",
+    "error": {
+      "code": "TIMEOUT",
+      "message": "诊断执行失败，请查看错误码",
+      "node": null,
+      "recoverable": true
+    },
+    "has_report": false,
+    "report_http": 409,
+    "trace_steps": [
+      [
+        "parse_input",
+        "start",
+        null
+      ],
+      [
+        "parse_input",
+        "end",
+        "7 项特征齐备"
+      ],
+      [
+        "timeout_finalize",
+        "timeout",
+        "全局 15s 熔断"
+      ]
+    ],
+    "sse_has_terminal": true,
+    "sse_tail": "_count\":0,\"report_elements_check\":null,\"duration_ms\":0,\"interrupt\":null,\"human_decision\":null,\"auto_review\":false,\"report\":null,\"report_meta\":null,\"trace_steps\":[{\"step_id\":\"stp_41f1be9158209c62e9deb2bb\",\"node\":\"parse_input\",\"event\":\"start\",\"rule_id\":null,\"revision\":1,\"summary\":null,\"duration_ms\":null,\"created_at\":\"2026-10-24T14:51:05.157Z\"},{\"step_id\":\"stp_f26994fc3d4744606f67ca5b\",\"node\":\"parse_input\",\"event\":\"end\",\"rule_id\":\"RT-01\",\"revision\":1,\"summary\":\"7 项特征齐备\",\"duration_ms\":0,\"created_at\":\"2026-10-24T14:51:05.158Z\"}],\"timings\":{\"total_ms\":0,\"nodes\":{\"parse_input\":0}},\"error\":null,\"batch\":null,\"created_at\":\"2026-10-24T14:51:05.153Z\",\"started_at\":\"2026-10-24T14:51:05.153Z\",\"finished_at\":null}}\n\nevent: heartbeat\ndata: {\"seq\":null,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q69P21691Y5ABZFHXPBAD8\",\"type\":\"heartbeat\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:20.372Z\",\"payload\":{\"server_time\":\"2026-10-24T14:51:20.372Z\"}}\n\nid: 1\nevent: status\ndata: {\"seq\":1,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q69P21691Y5ABZFHXPBAD8\",\"type\":\"status\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:21.168Z\",\"payload\":{\"from\":\"running\",\"to\":\"failed_timeout\",\"reason\":\"finalize\",\"version\":2}}",
+    "pass": true
+  },
+  {
+    "node": "diagnose",
+    "diagnosis_id": "dx_01M5Q6A654YE0BP99MMS25Y41C",
+    "create_http": 202,
+    "elapsed_s": 16.48,
+    "status": "failed_timeout",
+    "error": {
+      "code": "TIMEOUT",
+      "message": "诊断执行失败，请查看错误码",
+      "node": null,
+      "recoverable": true
+    },
+    "has_report": false,
+    "report_http": 409,
+    "trace_steps": [
+      [
+        "parse_input",
+        "start",
+        null
+      ],
+      [
+        "parse_input",
+        "end",
+        "7 项特征齐备"
+      ],
+      [
+        "retrieve",
+        "start",
+        null
+      ],
+      [
+        "retrieve",
+        "end",
+        "命中 5 条，coverage=covered"
+      ],
+      [
+        "timeout_finalize",
+        "timeout",
+        "全局 15s 熔断"
+      ]
+    ],
+    "sse_has_terminal": true,
+    "sse_tail": "e\":\"parse_input\",\"event\":\"end\",\"rule_id\":\"RT-01\",\"revision\":1,\"summary\":\"7 项特征齐备\",\"duration_ms\":0,\"created_at\":\"2026-10-24T14:51:21.639Z\"},{\"step_id\":\"stp_dd46a0ea8693a1c29348e1bc\",\"node\":\"retrieve\",\"event\":\"start\",\"rule_id\":null,\"revision\":1,\"summary\":null,\"duration_ms\":null,\"created_at\":\"2026-10-24T14:51:21.641Z\"},{\"step_id\":\"stp_65bc6b71e16858a562862c67\",\"node\":\"retrieve\",\"event\":\"end\",\"rule_id\":\"RT-04\",\"revision\":1,\"summary\":\"命中 5 条，coverage=covered\",\"duration_ms\":0,\"created_at\":\"2026-10-24T14:51:21.641Z\"}],\"timings\":{\"total_ms\":0,\"nodes\":{\"parse_input\":0,\"retrieve\":0}},\"error\":null,\"batch\":null,\"created_at\":\"2026-10-24T14:51:21.636Z\",\"started_at\":\"2026-10-24T14:51:21.636Z\",\"finished_at\":null}}\n\nevent: heartbeat\ndata: {\"seq\":null,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q6A654YE0BP99MMS25Y41C\",\"type\":\"heartbeat\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:36.871Z\",\"payload\":{\"server_time\":\"2026-10-24T14:51:36.871Z\"}}\n\nid: 1\nevent: status\ndata: {\"seq\":1,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q6A654YE0BP99MMS25Y41C\",\"type\":\"status\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:37.647Z\",\"payload\":{\"from\":\"running\",\"to\":\"failed_timeout\",\"reason\":\"finalize\",\"version\":2}}",
+    "pass": true
+  },
+  {
+    "node": "report",
+    "diagnosis_id": "dx_01M5Q6AP89JWJ918F6GYBXPWJ9",
+    "create_http": 202,
+    "elapsed_s": 16.44,
+    "status": "failed_timeout",
+    "error": {
+      "code": "TIMEOUT",
+      "message": "诊断执行失败，请查看错误码",
+      "node": null,
+      "recoverable": true
+    },
+    "has_report": false,
+    "report_http": 409,
+    "trace_steps": [
+      [
+        "parse_input",
+        "start",
+        null
+      ],
+      [
+        "parse_input",
+        "end",
+        "7 项特征齐备"
+      ],
+      [
+        "retrieve",
+        "start",
+        null
+      ],
+      [
+        "retrieve",
+        "end",
+        "命中 5 条，coverage=covered"
+      ],
+      [
+        "diagnose",
+        "start",
+        null
+      ],
+      [
+        "diagnose",
+        "end",
+        "主类型 正常，置信度 0.9500，规则兜底"
+      ],
+      [
+        "timeout_finalize",
+        "timeout",
+        "全局 15s 熔断"
+      ]
+    ],
+    "sse_has_terminal": true,
+    "sse_tail": "d\",\"rule_id\":\"RT-04\",\"revision\":1,\"summary\":\"命中 5 条，coverage=covered\",\"duration_ms\":0,\"created_at\":\"2026-10-24T14:51:38.127Z\"},{\"step_id\":\"stp_f396282d9f733e25c996eda7\",\"node\":\"diagnose\",\"event\":\"start\",\"rule_id\":null,\"revision\":1,\"summary\":null,\"duration_ms\":null,\"created_at\":\"2026-10-24T14:51:38.128Z\"},{\"step_id\":\"stp_93155dde12a155e46062923e\",\"node\":\"diagnose\",\"event\":\"end\",\"rule_id\":\"RT-06\",\"revision\":1,\"summary\":\"主类型 正常，置信度 0.9500，规则兜底\",\"duration_ms\":0,\"created_at\":\"2026-10-24T14:51:38.129Z\"}],\"timings\":{\"total_ms\":0,\"nodes\":{\"parse_input\":0,\"retrieve\":0,\"diagnose\":0}},\"error\":null,\"batch\":null,\"created_at\":\"2026-10-24T14:51:38.121Z\",\"started_at\":\"2026-10-24T14:51:38.121Z\",\"finished_at\":null}}\n\nevent: heartbeat\ndata: {\"seq\":null,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q6AP89JWJ918F6GYBXPWJ9\",\"type\":\"heartbeat\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:53.317Z\",\"payload\":{\"server_time\":\"2026-10-24T14:51:53.317Z\"}}\n\nid: 1\nevent: status\ndata: {\"seq\":1,\"stream_kind\":\"diagnosis\",\"stream_id\":\"dx_01M5Q6AP89JWJ918F6GYBXPWJ9\",\"type\":\"status\",\"revision\":1,\"occurred_at\":\"2026-10-24T14:51:54.136Z\",\"payload\":{\"from\":\"running\",\"to\":\"failed_timeout\",\"reason\":\"finalize\",\"version\":2}}",
+    "pass": true
+  }
+]

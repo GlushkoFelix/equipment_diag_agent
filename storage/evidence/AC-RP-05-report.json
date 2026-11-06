@@ -1,0 +1,8 @@
+{
+  "diagnosis_id": "dx_01M6G2506F3DS54E5HVEFFXWPD",
+  "confidence": 0.62,
+  "confidence_level": "medium",
+  "retry_count": 1,
+  "confidence_line": "中等置信度（0.62），建议人工复核，已人工确认",
+  "report_top": "# 3号机 HDF 诊断报告\n\n## 结论\n主类型：HDF。夹具：温差低且转速低\n\n## 置信度\n中等置信度（0.62），建议人工复核，已人工确认\n\n## 关键特征\n- 空气温度：298.1 K\n- 工艺温度：305.3 K\n- 温差：7.2 K\n- 转速：1250.0 rpm\n- 扭矩：30.0 Nm\n- 功率：3926.991 W\n- 刀具磨损：100.0 min"
+}

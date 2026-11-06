@@ -1,0 +1,113 @@
+{
+  "batch_task_id": "bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD",
+  "llm_mode": "deepseek",
+  "deepseek_model": "deepseek-chat",
+  "status": "partially_failed",
+  "counts": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 209,
+    "degraded": 0,
+    "degraded_review": 30,
+    "failed": 1,
+    "failed_timeout": 0,
+    "cancelled": 0
+  },
+  "executed": 240,
+  "success": 239,
+  "success_rate": 0.9958333333333333,
+  "total_rows": 240,
+  "export_bytes": 22082,
+  "llm_evidence": {
+    "diagnoses": 239,
+    "attribute_llm_used": 239,
+    "report_llm_used": 238,
+    "report_model_counts": {
+      "deepseek-chat": 238,
+      "rule-engine": 1
+    },
+    "status_of_diagnoses": {
+      "succeeded": 209,
+      "degraded_review": 30
+    },
+    "samples": [
+      {
+        "diagnosis_id": "dx_01M5S9Q7QVVY5NRM2NXBWZZ913",
+        "status": "succeeded",
+        "llm_used_attribute": true,
+        "llm_used_report": true,
+        "model_name": "deepseek-chat",
+        "llm_calls": 1,
+        "confidence_breakdown_keys": [
+          "completeness",
+          "coverage",
+          "llm_attempts",
+          "llm_decided",
+          "llm_self",
+          "llm_used",
+          "penalties",
+          "rule",
+          "total"
+        ]
+      },
+      {
+        "diagnosis_id": "dx_01M5S9Q7RNY1VAZHRX6D6B9QHQ",
+        "status": "succeeded",
+        "llm_used_attribute": true,
+        "llm_used_report": true,
+        "model_name": "deepseek-chat",
+        "llm_calls": 1,
+        "confidence_breakdown_keys": [
+          "completeness",
+          "coverage",
+          "llm_attempts",
+          "llm_decided",
+          "llm_self",
+          "llm_used",
+          "penalties",
+          "rule",
+          "total"
+        ]
+      },
+      {
+        "diagnosis_id": "dx_01M5S9QFKKDP32ZCF79GG7NHDZ",
+        "status": "succeeded",
+        "llm_used_attribute": true,
+        "llm_used_report": true,
+        "model_name": "deepseek-chat",
+        "llm_calls": 1,
+        "confidence_breakdown_keys": [
+          "completeness",
+          "coverage",
+          "llm_attempts",
+          "llm_decided",
+          "llm_self",
+          "llm_used",
+          "penalties",
+          "rule",
+          "total"
+        ]
+      }
+    ]
+  },
+  "failed_rows": [
+    {
+      "row_no": 31,
+      "error_code": "FEATURE_OUT_OF_RANGE",
+      "error_field": "air_temp_k",
+      "note": "刻意构造的非法行，用于验证行级错误隔离"
+    }
+  ],
+  "report_fallback": {
+    "row_no": 195,
+    "model_name": "rule-engine",
+    "llm_used": false,
+    "status": "succeeded",
+    "note": "报告节点 LLM 调用失败后回落规则模板，未伪造 LLM 归因"
+  },
+  "latency_ms": {
+    "p50": 6029,
+    "p95": 7322,
+    "samples": 239
+  }
+}

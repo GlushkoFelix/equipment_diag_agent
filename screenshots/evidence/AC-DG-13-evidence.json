@@ -1,0 +1,21 @@
+{
+  "scenario_1_runtime_delete_index": {
+    "action": "运行中把 index.faiss 移出 kb_v1 目录后立即提交表单诊断",
+    "status": "succeeded",
+    "knowledge_status": "supported",
+    "result": "仍为 supported（索引在内存中，删除文件不触发降级）",
+    "pass": false
+  },
+  "scenario_2_restart_with_index_missing": {
+    "action": "index.faiss 缺失后重启服务",
+    "observed": "ensure_built 检测 active 版本文件缺失后 rebuild（knowledge.py:239-250），服务自愈，不进入 missing 状态",
+    "pass": false
+  },
+  "scenario_3_empty_kb_seed": {
+    "action": "种子文件为 [] 的空知识库启动",
+    "observed": "启动失败：sqlite3.IntegrityError: CHECK constraint failed: entry_count >= 1",
+    "error": "sqlite3.IntegrityError: CHECK constraint failed: entry_count >= 1",
+    "pass": false
+  },
+  "conclusion": "AC-DG-13 要求的“缺失索引→knowledge_status=missing→报告声明未覆盖”端到端路径未实现：运行中删除不降级，重启自动重建，空知识库无法启动。"
+}
