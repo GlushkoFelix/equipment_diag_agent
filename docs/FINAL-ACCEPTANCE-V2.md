@@ -2,7 +2,6 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 判定日期 | 2026-10-25 |
 | 判定角色 | 最终验收审查员（冷启动，不采信窗口自述，不沿用上轮统计口径） |
 | 判定依据 | PRD V3.0.0 附录 B（91→实为 **90** 条 AC，见 §1.2）、ARCH V1.2.0、UIUX V1.2.0、HANDOFF V1.2.2、DB V1.1.0、`docs/EVAL-评测报告.md`、`docs/AC-EVIDENCE-PACK.md`、`docs/DELIVERY-NOTES.md`、`docs/E2E-UI-测试记录.md`、`screenshots/evidence/`、后端 `pytest` 实测、现网 DB 复核 |
 | 上一轮 | `docs/FINAL-ACCEPTANCE.md`（不通过：39 通过 / 14 失败 / 38 未验证） |

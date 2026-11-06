@@ -5,9 +5,8 @@
 | 文档名称 | 设备故障诊断智能体 系统架构与 API 契约设计文档 |
 | 文档版本 | V1.2.0 |
 | 文档状态 | **契约冻结候选（V1.2.0 返修稿，待复审）** |
-| PRD 基线 | 《PRD-设备故障诊断智能体-V1.0.0.md》V3.0.0（2026-10-23 冻结） |
+| PRD 基线 | 《PRD-设备故障诊断智能体-V1.0.0.md》V3.0.0（冻结） |
 | API 版本 | `/api/v1` |
-| 编写日期 | 2026-10-23 |
 | 上游依据 | PRD §3.2.2 路由规则、§3.5 共享状态、§3.6 编排流程、§3.7 中断恢复、§4.2 模块划分、§4.5 数据字典、附录 B 验收用例 |
 | 下游文档 | 《数据库设计文档》、前后端实现、测试用例、部署运维手册 |
 | 本文范围 | 系统架构、模块划分、LangGraph 编排映射、REST/SSE 契约、持久化契约、边界一致性设计 |
@@ -15,11 +14,11 @@
 
 **修订记录**
 
-| 版本 | 日期 | 修订说明 |
-| --- | --- | --- |
-| V1.0.0 | 2026-10-23 | 初版架构与 API 契约 |
-| V1.1.0 | 2026-10-23 | 按《ARCH 验收日志》修复 P0-01~P0-03 与 P1-ARCH-01~18：NL 缺失字段走 clarification、补齐快照验收字段、注册 route 节点、统一 `report_meta`、补中断载荷 Schema、KPI 口径与重启清指纹等 |
-| V1.2.0 | 2026-10-23 | 按 V1.1.0 复审报告修复 P0-04 与 P1-R1~R8：`device_id` 全入口必填、chat confirm RT-17 200/dedup、features null 规则、会话状态 409、补充卡 Schema、完整 SSE snapshot、InterruptPayload `$ref`、route `aborted`、时序与迁移一致性 |
+| 版本 | 修订说明 |
+| --- | --- |
+| V1.0.0 | 初版架构与 API 契约 |
+| V1.1.0 | 按《ARCH 验收日志》修复 P0-01~P0-03 与 P1-ARCH-01~18：NL 缺失字段走 clarification、补齐快照验收字段、注册 route 节点、统一 `report_meta`、补中断载荷 Schema、KPI 口径与重启清指纹等 |
+| V1.2.0 | 按 V1.1.0 复审报告修复 P0-04 与 P1-R1~R8：`device_id` 全入口必填、chat confirm RT-17 200/dedup、features null 规则、会话状态 409、补充卡 Schema、完整 SSE snapshot、InterruptPayload `$ref`、route `aborted`、时序与迁移一致性 |
 
 **契约优先级**
 
@@ -3810,20 +3809,20 @@ type UseDiagnosisStream = {
 
 ### 10.4 契约变更登记
 
-| 编号 | 日期 | 变更 | 类型 | 影响 | 状态 |
-| --- | --- | --- | --- | --- | --- |
-| C-001 | 2026-10-23 | 初版契约冻结：REST + SSE + JSON Schema | 基线 | 前后端/DB/测试 | 已生效 |
-| C-002 | 2026-10-23 | 新增 `auto_review`、`report_title`、`report_meta`、`interrupt_expires_at`、`execution_mode`、`batch_task_id`、`row_id` 持久化字段（PRD P1 补齐） | 架构补充 | DB/API/前端 | 已生效 |
-| C-003 | 2026-10-23 | 新增 `active_fingerprint_key` 原子去重列 | 架构补充 | DB | 已生效 |
-| C-004 | 2026-10-23 | 新增 `sessions`、`chat_sessions`、`chat_messages`、`batch_events`、`idempotency_keys` | 架构补充 | DB | 已生效 |
-| C-005 | 2026-10-23 | 置信度分级改左闭右开；`failed_timeout` 独立终态 | 边界修正 | 后端/测试/前端 | 已生效 |
-| C-006 | 2026-10-23 | V1.1.0 返修：NL 部分输入、快照验收字段、路由节点注册、`report_meta` 统一、中断载荷 Schema、KPI 口径、重启清指纹、chat confirm | 契约返修 | 前端/后端/DB/测试 | 已生效 |
-| C-007 | 2026-10-23 | V1.2.0 返修：`device_id` 全入口必填、chat confirm RT-17 200/dedup、features null 规则、会话状态 409、补充卡 Schema、SSE snapshot 完整示例、InterruptPayload `$ref`、`aborted` 路由、时序/迁移 | 契约返修 | 前端/后端/测试 | 已生效 |
-| C-008 | 2026-10-24 | 批量映射旁路存储：批量任务映射与行级映射持久化在 `storage/batches/<batch_task_id>.json`；启动对账读取旁路文件继续调度 `pending` 行；`batch_tasks` 不新增映射列 | 架构补充 | 后端/DB/部署 | 已生效 |
-| C-009 | 2026-10-24 | 评测实现口径：HDF 规则温度差判定取 `≤ 8.6 K`（PRD 语义 `< 8.6 K` 不变）；DeepSeek 归因/报告提示词文件化于 `backend/prompts/`，版本写入 `report_meta.prompt_version` | 实现口径 | 后端/测试/评测 | 已生效 |
-| C-010 | 2026-10-24 | P0 验收补齐：新增内部配置 `INTERRUPT_SCAN_SECONDS`（默认 60s）驱动 `runner.run_once()` 后台扫描；提示词注入清洗与敏感词文件化日志；知识版本 CLI 手动 `activate/rollback`。不改 REST/SSE/状态机/DB 字段与枚举 | 实现口径 | 后端/部署/运维 | 已生效 |
-| C-011 | 2026-10-25 | KPI-01 例外验收：主验收按五分类（正常/TWF/HDF/PWF/OSF）准确率 96.36%（106/110）≥90%；RNF 单列参考，不计入主准确率分子分母；六分类原始 88.33%（106/120）必须同时披露。不得删样本、放宽 RNF 规则、让 LLM 覆盖规则证据 | 验收口径 | 产品/测试/交付 | 产品方已批准（2026-10-25） |
-| C-012 | 2026-10-26 | AC-CC-01 浏览器/版本覆盖裁决：接受“Edge 单版本 + WebKit 替代 Safari”的客观替代方案；依据为微软不公开分发 Edge 历史版本、Windows 平台无原生 Safari。7 组配置（Chrome 156/155、Edge 156、Firefox 157/155、WebKit 27.2/26.6）全部通过；适用范围仅限 AC-CC-01，不外扩到其他 AC 或 KPI | 验收口径 | 产品/测试/交付 | 产品方已批准（2026-10-26）；随 V4 验收引用生效 |
+| 编号 | 变更 | 类型 | 影响 | 状态 |
+| --- | --- | --- | --- | --- |
+| C-001 | 初版契约冻结：REST + SSE + JSON Schema | 基线 | 前后端/DB/测试 | 已生效 |
+| C-002 | 新增 `auto_review`、`report_title`、`report_meta`、`interrupt_expires_at`、`execution_mode`、`batch_task_id`、`row_id` 持久化字段（PRD P1 补齐） | 架构补充 | DB/API/前端 | 已生效 |
+| C-003 | 新增 `active_fingerprint_key` 原子去重列 | 架构补充 | DB | 已生效 |
+| C-004 | 新增 `sessions`、`chat_sessions`、`chat_messages`、`batch_events`、`idempotency_keys` | 架构补充 | DB | 已生效 |
+| C-005 | 置信度分级改左闭右开；`failed_timeout` 独立终态 | 边界修正 | 后端/测试/前端 | 已生效 |
+| C-006 | V1.1.0 返修：NL 部分输入、快照验收字段、路由节点注册、`report_meta` 统一、中断载荷 Schema、KPI 口径、重启清指纹、chat confirm | 契约返修 | 前端/后端/DB/测试 | 已生效 |
+| C-007 | V1.2.0 返修：`device_id` 全入口必填、chat confirm RT-17 200/dedup、features null 规则、会话状态 409、补充卡 Schema、SSE snapshot 完整示例、InterruptPayload `$ref`、`aborted` 路由、时序/迁移 | 契约返修 | 前端/后端/测试 | 已生效 |
+| C-008 | 批量映射旁路存储：批量任务映射与行级映射持久化在 `storage/batches/<batch_task_id>.json`；启动对账读取旁路文件继续调度 `pending` 行；`batch_tasks` 不新增映射列 | 架构补充 | 后端/DB/部署 | 已生效 |
+| C-009 | 评测实现口径：HDF 规则温度差判定取 `≤ 8.6 K`（PRD 语义 `< 8.6 K` 不变）；DeepSeek 归因/报告提示词文件化于 `backend/prompts/`，版本写入 `report_meta.prompt_version` | 实现口径 | 后端/测试/评测 | 已生效 |
+| C-010 | P0 验收补齐：新增内部配置 `INTERRUPT_SCAN_SECONDS`（默认 60s）驱动 `runner.run_once()` 后台扫描；提示词注入清洗与敏感词文件化日志；知识版本 CLI 手动 `activate/rollback`。不改 REST/SSE/状态机/DB 字段与枚举 | 实现口径 | 后端/部署/运维 | 已生效 |
+| C-011 | KPI-01 例外验收：主验收按五分类（正常/TWF/HDF/PWF/OSF）准确率 96.36%（106/110）≥90%；RNF 单列参考，不计入主准确率分子分母；六分类原始 88.33%（106/120）必须同时披露。不得删样本、放宽 RNF 规则、让 LLM 覆盖规则证据 | 验收口径 | 产品/测试/交付 | 产品方已批准 |
+| C-012 | AC-CC-01 浏览器/版本覆盖裁决：接受“Edge 单版本 + WebKit 替代 Safari”的客观替代方案；依据为微软不公开分发 Edge 历史版本、Windows 平台无原生 Safari。7 组配置（Chrome 156/155、Edge 156、Firefox 157/155、WebKit 27.2/26.6）全部通过；适用范围仅限 AC-CC-01，不外扩到其他 AC 或 KPI | 验收口径 | 产品/测试/交付 | 产品方已批准；随 V4 验收引用生效 |
 
 **C-008 明细**
 

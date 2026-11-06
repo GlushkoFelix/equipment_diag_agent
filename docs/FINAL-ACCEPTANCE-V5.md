@@ -2,10 +2,9 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 判定日期 | 2026-10-26 |
 | 判定角色 | 最终验收审查员（冷启动；不采信窗口自述；不沿用 V4 统计口径） |
 | 权威清单 | PRD 附录 B，自行复核 **90 条（P0 78 / P1 12）** |
-| 测试基线 | `storage/pytest-accept-v5.xml`：**194 collected / 0 failed / 0 error / 0 skipped / 50.69s**（2026-10-26 16:09:41 +08:00 实跑） |
+| 测试基线 | `storage/pytest-accept-v5.xml`：**194 collected / 0 failed / 0 error / 0 skipped / 50.69s** |
 | 本轮变化 | AC-KB-06 补跨参数实测与同参数重复断言（+3 用例，净增 2）；证据文件 9 个全部在本轮重写 |
 | 最终裁决 | **【通过】**（90/90 通过；P0 78/78、P1 12/12；无剩余阻塞项） |
 
@@ -67,7 +66,7 @@ cd backend
 python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml
 ```
 
-`testsuite`：`tests=194, failures=0, errors=0, skipped=0, time=50.686, timestamp=2026-10-26T16:09:41.993628+08:00`。相对 V4 的 192 条：移除 1 条旧的 KB-06 用例、新增 3 条，净增 2。
+`testsuite`：`tests=194, failures=0, errors=0, skipped=0, time=50.686`。相对 V4 的 192 条：移除 1 条旧的 KB-06 用例、新增 3 条，净增 2。
 
 | 新用例 | 具体断言 |
 | --- | --- |
@@ -90,7 +89,7 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml
 
 ### 3.2 落盘证据与代码输出一致性
 
-实际证据文件：`storage/evidence/AC-KB-06-retrieval-comparison.json`（990 字节，2026-10-26 16:09:44 本轮重写）。
+实际证据文件：`storage/evidence/AC-KB-06-retrieval-comparison.json`（990 字节，本轮重写）。
 
 | 核验点 | 证据值 | 判定 |
 | --- | --- | --- |
@@ -100,7 +99,7 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml
 | 同参数重复一致 | `repeat.params == runs[0].params`、两者命中率均 `1.0`、`consistent=true` | 通过 |
 | 参数变更标记 | `params_changed=true` | 通过 |
 | 临时库版本 | `kb_tuning_c400_o50` / `kb_tuning_c200_o20`，`backend=hash` | 通过 |
-| active 知识版本未被改动 | `storage/app.db` 中 `knowledge_versions` 仅 `kb_v1`（active，14 条，built_at 2026-10-24） | 通过 |
+| active 知识版本未被改动 | `storage/app.db` 中 `knowledge_versions` 仅 `kb_v1`（active，14 条） | 通过 |
 
 > 必查指定的文件名 `AC-KB-06-param-sweep.json` 不存在；实际文件名为 `AC-KB-06-retrieval-comparison.json`，字段与代码输出逐项一致（上表）。记为 OBS-12（命名偏差，不影响 AC 行为判定）。
 
@@ -112,12 +111,12 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml
 
 ## 4. 必查 3：V4 已通过项回归抽检与 KPI 复算
 
-| 抽检项 | 本轮直接证据（16:09 重写） | 判定 |
+| 抽检项 | 本轮直接证据 | 判定 |
 | --- | --- | --- |
 | AC-RP-05 | `AC-RP-05-report.json`：`confidence=0.62`、`confidence_level=medium`、`retry_count=1`、`confidence_line="中等置信度（0.62），建议人工复核，已人工确认"` | 未退化 |
 | AC-IN-05 | `AC-IN-05-xlsx-upload.json`：`FILE_TYPE_NOT_ALLOWED` / `仅支持 .csv 文件` | 未退化 |
 | AC-SY-01 | `AC-SY-01-llm-missing.json`：`health_status=degraded`、`llm_config=missing`、`llm_config_missing=EDG_DEEPSEEK_API_KEY`、history 200、诊断 503 `LLM_NOT_CONFIGURED`、`health_after_diagnosis=200` | 未退化 |
-| AC-CC-01 | `screenshots/evidence/AC-CC-01-browser-smoke.json`（6907 字节，2026-10-25 13:02）；`ARCH §10.4` C-012 仍在，范围仍限 AC-CC-01 | 未退化 |
+| AC-CC-01 | `screenshots/evidence/AC-CC-01-browser-smoke.json`（6907 字节）；`ARCH §10.4` C-012 仍在，范围仍限 AC-CC-01 | 未退化 |
 | AC-HS-05 | 六状态 CSV 本轮重写：`succeeded/degraded/degraded_review/failed/failed_timeout/cancelled`；待复核摘要含“待人工复核”；`'=2+2` | 未退化 |
 | AC-SE-02 | 四个公式值导出均带 `'` 前缀（`'=cmd`、`'+SUM(1)`、`'-1+1`、`'@SUM(1)`），`SAFE-1` 正常 | 未退化 |
 | AC-IN-17 | `AC-IN-17-history-after-delete.json`：删除源文件后详情 200、`input_type=csv_single`、报告 200、历史 1 条 | 未退化 |
@@ -130,20 +129,20 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml
 
 仓库无 `.git`（`git status` 返回 not a repository），故以文件最后写入时间与内容为准：
 
-| 文档 | 最后写入 | 本轮（16:05 后）是否变化 |
-| --- | --- | --- |
-| `PRD-设备故障诊断智能体-V1.0.0.md` | 2026-10-23 16:20 | 否 |
-| `UIUX-设备故障诊断智能体.md` | 2026-10-23 21:17 | 否 |
-| `DB-数据库设计文档.md` | 2026-10-23 22:49 | 否 |
-| `ARCH-系统架构与API契约.md` | 2026-10-26 14:07 | 否（无 C-013） |
-| `FINAL-ACCEPTANCE.md`（V1） | 2026-10-24 22:17 | 否 |
-| `FINAL-ACCEPTANCE-V2.md` | 2026-10-25 14:01 | 否 |
-| `FINAL-ACCEPTANCE-V3.md` | 2026-10-26 11:41 | 否 |
-| `FINAL-ACCEPTANCE-V4.md` | 2026-10-26 14:25 | 否 |
+| 文档 | 本轮是否变化 |
+| --- | --- |
+| `PRD-设备故障诊断智能体-V1.0.0.md` | 否 |
+| `UIUX-设备故障诊断智能体.md` | 否 |
+| `DB-数据库设计文档.md` | 否 |
+| `ARCH-系统架构与API契约.md` | 否（无 C-013） |
+| `FINAL-ACCEPTANCE.md`（V1） | 否 |
+| `FINAL-ACCEPTANCE-V2.md` | 否 |
+| `FINAL-ACCEPTANCE-V3.md` | 否 |
+| `FINAL-ACCEPTANCE-V4.md` | 否 |
 
 本轮仅新增 `docs/FINAL-ACCEPTANCE-V5.md` 与 `storage/pytest-accept-v5.xml`；其余改动为测试运行重写 `storage/evidence/*` 证据文件（测试自身行为）。
 
-附录：本轮开始前已存在 KB-06 的实现与用例改动（`backend/app/evaluation.py` 16:05:43、`backend/tests/contract/test_ac_kb06_reproducibility.py` 16:05:55）；验收只核验其结果，未在本轮修改这两处，也不属于冻结文档。
+附录：本轮开始前已存在 KB-06 的实现与用例改动（`backend/app/evaluation.py`、`backend/tests/contract/test_ac_kb06_reproducibility.py`）；验收只核验其结果，未在本轮修改这两处，也不属于冻结文档。
 
 ---
 

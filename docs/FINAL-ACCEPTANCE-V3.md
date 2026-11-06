@@ -2,10 +2,9 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 判定日期 | 2026-10-26 |
 | 判定角色 | 最终验收审查员（冷启动；不采信任何窗口自述；不沿用 V2 统计口径） |
 | 权威清单 | PRD 附录 B，本报告自行复核为 **90 条（P0 78 / P1 12）**，见 §0.3 |
-| 测试基线 | `storage/pytest-accept-20261026.xml`：**185 collected / 0 failed / 0 error / 0 skipped / 56.68s**（2026-10-26 11:39:45 +08:00 实跑） |
+| 测试基线 | `storage/pytest-accept-20261026.xml`：**185 collected / 0 failed / 0 error / 0 skipped / 56.68s** |
 | 本轮代码/产物 | 后端 `185` 条测试、`storage/app.db`、`storage/eval/evb_01M5Q111XDZHNAA1YMCY2K14RR.json`、KPI-05 v2 证据包、`screenshots/e2e/18-21` |
 | 最终裁决 | **【不通过】**（P0 无失败，但 3 项 P0 未验证 + 1 项 P0 待裁决；P1 仍有 1 项失败） |
 
@@ -68,7 +67,7 @@ cd backend
 python -m pytest -q --junitxml=..\storage\pytest-accept-20261026.xml
 ```
 
-解析 `testsuite` 属性：`tests=185, failures=0, errors=0, skipped=0, time=56.684`（`timestamp=2026-10-26T11:39:45.817865+08:00`）。与 `pytest-p0-fix2.xml`（169）逐用例名比对，新增恰为 **16 条**，无删除、无改名丢失。
+解析 `testsuite` 属性：`tests=185, failures=0, errors=0, skipped=0, time=56.684`。与 `pytest-p0-fix2.xml`（169）逐用例名比对，新增恰为 **16 条**，无删除、无改名丢失。
 
 ### 2.2 16 条新用例抽检（逐文件阅读源码，确认非空洞断言）
 
@@ -147,7 +146,7 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-20261026.xml
 
 | 文件 | 内容 | 自洽性判断 |
 | --- | --- | --- |
-| `AC-EV-07-v2-audit.md` | AI 预审 20 行明细 + 评审表汇总 + 逐条对照 + 3 条分歧裁决 + 签字确认 | 明确 `audit.json` 的 `human_reviewers=0` 仅代表 2026-10-25 18:35 的预审轮次；人工结论以 10-26 的双人表为准，自洽 |
+| `AC-EV-07-v2-audit.md` | AI 预审 20 行明细 + 评审表汇总 + 逐条对照 + 3 条分歧裁决 + 签字确认 | 明确 `audit.json` 的 `human_reviewers=0` 仅代表预审轮次；人工结论以双人表为准，自洽 |
 | `AC-EV-07-v2-health.json` | `vector_index=missing` | 前置“真实知识未覆盖”成立 |
 | `AC-EV-07-v2-raw.json` | 20/20 `knowledge_status=missing`、`primary_type=未覆盖`、置信度 0.4、报告声明“知识库未覆盖” | 样本确为未覆盖，不是 supported |
 | `AC-EV-07-v2-audit.json` | `human_reviewers=0`，`rows=20`，`fabricated=0`，`note` 明示“结论不代表已满足 2 名真人评审要求” | **必须且只能解释为 AI 预审快照**，不能当作“无真人评审” |
@@ -246,7 +245,7 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-20261026.xml
 | AC-DG-08 | 通过 | = | `test_review_confirm_generates_report`：确认后仅出报告 | — |
 | AC-DG-09 | 通过 | ↑ | `test_ac_dg09_...`：revision=2、补充字段生效、旧字段保留 | 报告渲染与 `review_round=1` 未单独断言 |
 | AC-DG-10 | 通过 | = | `test_rt11_abort_goes_aborted` + `25-aborted.png` | — |
-| AC-DG-11 | 通过 | ↑ | e2e `19a/19b/19/20`（2026-10-25 22:56–23:03）：刷新后面板恢复 0.58/29:58、确认出报告 | 无网络日志断言“不重复执行节点”；E2E 文档未回写 18–21 |
+| AC-DG-11 | 通过 | ↑ | e2e `19a/19b/19/20`：刷新后面板恢复 0.58/29:58、确认出报告 | 无网络日志断言“不重复执行节点”；E2E 文档未回写 18–21 |
 | AC-DG-12 | 通过 | = | `useDiagnosisStream.ts` 重连 + 3 次失败转轮询 + `08/09` 截图 | — |
 | AC-DG-13 | 通过 | = | `test_ac_dg13_*` ×3：运行中缺失/重启 missing/空种子 | — |
 | AC-DG-14 | 通过 | = | `test_ac_dg23` + TTL 证据（expired + 新 id） | — |
@@ -305,17 +304,17 @@ python -m pytest -q --junitxml=..\storage\pytest-accept-20261026.xml
 
 ## 8. 浏览器证据时效与内容（含 e2e 18–21）
 
-| 文件 | 时间 | 内容 | 判定用途 |
-| --- | --- | --- | --- |
-| `19a-dg11-review-before-refresh.png` | 2026-10-25 22:56:38 | 修复前复核面板 | 缺陷复现留痕 |
-| `19b-dg11-after-refresh-before-fix.png` | 2026-10-25 22:56:43 | 刷新后、修复前：面板丢失 | 缺陷复现留痕 |
-| `20-review-refresh-confirm-report.png` | 2026-10-25 23:00:14 | 复核确认后生成报告 | DG-11/ DG-08 辅证 |
-| `18-401-redirect-login.png` | 2026-10-25 23:03:18 | 未授权跳转登录 | US-05/SE-04 辅证 |
-| `21-export-401-redirect-login.png` | 2026-10-25 23:03:09 | 导出未授权跳转登录 | SE-04 辅证 |
-| `19-review-refresh-restored.png` | 2026-10-25 23:03:37 | 修复后刷新恢复：置信度 0.58、剩余 29:58、证据列、放弃/补充/确认 | **DG-11 直接证据** |
+| 文件 | 内容 | 判定用途 |
+| --- | --- | --- |
+| `19a-dg11-review-before-refresh.png` | 修复前复核面板 | 缺陷复现留痕 |
+| `19b-dg11-after-refresh-before-fix.png` | 刷新后、修复前：面板丢失 | 缺陷复现留痕 |
+| `20-review-refresh-confirm-report.png` | 复核确认后生成报告 | DG-11/ DG-08 辅证 |
+| `18-401-redirect-login.png` | 未授权跳转登录 | US-05/SE-04 辅证 |
+| `21-export-401-redirect-login.png` | 导出未授权跳转登录 | SE-04 辅证 |
+| `19-review-refresh-restored.png` | 修复后刷新恢复：置信度 0.58、剩余 29:58、证据列、放弃/补充/确认 | **DG-11 直接证据** |
 
-- 时效：全部为 2026-10-25 22:56–23:03，距本次判定 <24h；本轮后端改动集中在提示词回归、生产启动门禁、评测命中率与启动降级，不触及中断快照/复核面板，故截图仍代表当前 UI 行为。
-- 偏差：`docs/E2E-UI-测试记录.md` 仍停留在 2026-10-24 的 1–17 号用例，未回写 18–21；属文档滞后（OBS-03），不影响 DG-11 的截图判定。
+- 时效：全部为本轮采集，距本次判定 <24h；本轮后端改动集中在提示词回归、生产启动门禁、评测命中率与启动降级，不触及中断快照/复核面板，故截图仍代表当前 UI 行为。
+- 偏差：`docs/E2E-UI-测试记录.md` 仍停留在 1–17 号用例，未回写 18–21；属文档滞后（OBS-03），不影响 DG-11 的截图判定。
 - DG-11 的“不重复执行节点/无重复报告”未以网络日志或 trace 断言，仅由“面板恢复 + 单份报告”可见结果支撑；已在该行登记缺口。
 
 ---

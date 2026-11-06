@@ -1,6 +1,5 @@
 # E2E-UI 测试记录（4 条关键点击链路）
 
-- 日期：2026-10-24
 - 前端：`http://localhost:5173`（Vite）
 - 后端：`http://127.0.0.1:8000`（FastAPI / uvicorn）
 - 账号：`zhangsan / Abcd1234`
@@ -222,23 +221,23 @@ GET  /api/v1/diagnoses/{id}/events             EventSource 200
 
 ---
 
-## 8. 补录：会话过期 401 与 review 刷新恢复（2026-10-25 22:56–23:03）
+## 8. 补录：会话过期 401 与 review 刷新恢复
 
-环境同 §0（前端 `http://localhost:5173`、后端 `http://127.0.0.1:8000`、账号 `zhangsan / Abcd1234`），工具 `agent-browser`（Chrome/CDP），视口 `1440×900`。本批为补充采集，用于 **AC-US-08**（会话过期 401 跳登录、`expires_at` 不续期）与 **AC-DG-11**（刷新后 review 快照恢复、确认后出报告）的浏览器侧证据；采集窗口 **2026-10-25 22:56–23:03**。
+环境同 §0（前端 `http://localhost:5173`、后端 `http://127.0.0.1:8000`、账号 `zhangsan / Abcd1234`），工具 `agent-browser`（Chrome/CDP），视口 `1440×900`。本批为补充采集，用于 **AC-US-08**（会话过期 401 跳登录、`expires_at` 不续期）与 **AC-DG-11**（刷新后 review 快照恢复、确认后出报告）的浏览器侧证据。
 
-| 序号 | 截图文件 | 采集时间 | 场景 | 断言 | 归属 AC |
-| --- | --- | --- | --- | --- | --- |
-| 19a | `e2e/19a-dg11-review-before-refresh.png` | 2026-10-25 22:56:38 | 中置信 review 中断态（刷新前） | 复核面板可见：置信度 0.58、剩余 TTL、证据条目、补充/确认入口 | AC-DG-11 |
-| 19b | `e2e/19b-dg11-after-refresh-before-fix.png` | 2026-10-25 22:56:43 | 刷新后（修复前现场） | 复现“刷新后未按快照恢复复核面板”缺陷，作为修复前留痕 | AC-DG-11（缺陷留痕） |
-| 20 | `e2e/20-review-refresh-confirm-report.png` | 2026-10-25 23:00:14 | 刷新恢复后点击“确认结论” | 生成报告：PWF、置信度 0.58（高）、已人工确认、耗时约 6.1s | AC-DG-11 |
-| 21 | `e2e/21-export-401-redirect-login.png` | 2026-10-25 23:03:09 | 会话过期后发起导出 | 导出请求 401 → 跳登录页，Toast“登录已过期，请重新登录”，响应体无报告内容 | AC-US-08（兼作 AC-SE-04 前端侧佐证） |
-| 18 | `e2e/18-401-redirect-login.png` | 2026-10-25 23:03:18 | 过期会话访问受保护路由 | 401 `AUTH_SESSION_EXPIRED` → 跳登录页，同一 Toast；`expires_at` 不被续期由后端 pytest 用例断言 | AC-US-08 |
-| 19 | `e2e/19-review-refresh-restored.png` | 2026-10-25 23:03:37 | 修复后刷新同一 review 诊断 | 复核面板按快照恢复：置信度 0.58、剩余 TTL、证据、补充/确认入口齐全，无“执行中”错位 | AC-DG-11 |
+| 序号 | 截图文件 | 场景 | 断言 | 归属 AC |
+| --- | --- | --- | --- | --- |
+| 19a | `e2e/19a-dg11-review-before-refresh.png` | 中置信 review 中断态（刷新前） | 复核面板可见：置信度 0.58、剩余 TTL、证据条目、补充/确认入口 | AC-DG-11 |
+| 19b | `e2e/19b-dg11-after-refresh-before-fix.png` | 刷新后（修复前现场） | 复现“刷新后未按快照恢复复核面板”缺陷，作为修复前留痕 | AC-DG-11（缺陷留痕） |
+| 20 | `e2e/20-review-refresh-confirm-report.png` | 刷新恢复后点击“确认结论” | 生成报告：PWF、置信度 0.58（高）、已人工确认、耗时约 6.1s | AC-DG-11 |
+| 21 | `e2e/21-export-401-redirect-login.png` | 会话过期后发起导出 | 导出请求 401 → 跳登录页，Toast“登录已过期，请重新登录”，响应体无报告内容 | AC-US-08（兼作 AC-SE-04 前端侧佐证） |
+| 18 | `e2e/18-401-redirect-login.png` | 过期会话访问受保护路由 | 401 `AUTH_SESSION_EXPIRED` → 跳登录页，同一 Toast；`expires_at` 不被续期由后端 pytest 用例断言 | AC-US-08 |
+| 19 | `e2e/19-review-refresh-restored.png` | 修复后刷新同一 review 诊断 | 复核面板按快照恢复：置信度 0.58、剩余 TTL、证据、补充/确认入口齐全，无“执行中”错位 | AC-DG-11 |
 
 补充说明：
 
 - 本批 18/21 的触发场景为**会话过期**（`AUTH_SESSION_EXPIRED`），不是“无 Cookie”（`AUTH_REQUIRED`）；后者由后端 `AC-SE-04` 用例覆盖（401 且响应体不含报告内容）。
 - AC-DG-11 的浏览器证据为截图级，**无网络日志/自动化断言**，与 V5 OBS 项一致；后端刷新链路由 `GET /diagnoses/{id}` 快照返回。
-- `screenshots/20-batch-running.png`（2026-10-24 13:31，根目录）为批量运行中进度面板，供 AC-IN-06 / AC-IN-08 佐证，非本批采集。
+- `screenshots/20-batch-running.png`（根目录）为批量运行中进度面板，供 AC-IN-06 / AC-IN-08 佐证，非本批采集。
 - §6 登记的两项待修复（单条映射预览固定 3 行、快照步骤顺序）已在后续轮次修复并补测，本批不再列。
 

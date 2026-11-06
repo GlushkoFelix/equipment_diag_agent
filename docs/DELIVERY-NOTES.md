@@ -3,9 +3,8 @@
 | 项目 | 内容 |
 | --- | --- |
 | 交付版本 | **V1.0.0**（后端 1.0.0，API 前缀 `/api/v1`） |
-| 交付日期 | **2026-10-26** |
-| 最终判定 | **`docs/FINAL-ACCEPTANCE-V5.md`（2026-10-26）：【通过】90/90**（P0 78/78、P1 12/12；未验证 0、失败 0、待裁决 0） |
-| 测试基线 | `storage/pytest-accept-v5.xml`：**194 collected / 0 failed / 0 error / 0 skipped / 50.686s**（2026-10-26T16:09:41 +08:00 实跑） |
+| 最终判定 | **`docs/FINAL-ACCEPTANCE-V5.md`：【通过】90/90**（P0 78/78、P1 12/12；未验证 0、失败 0、待裁决 0） |
+| 测试基线 | `storage/pytest-accept-v5.xml`：**194 collected / 0 failed / 0 error / 0 skipped / 50.686s** |
 | 当前 LLM 模式 | `EDG_LLM_MODE=deepseek`（Key 已验证可用，`report_meta.model_name=deepseek-chat`） |
 | 指标来源 | 最终批次 `evb_01M5Q111XDZHNAA1YMCY2K14RR`（未重跑、未改口径） |
 | 裁决引用 | `C-011`（仅覆盖 KPI-01 六分类门槛）、`C-012`（仅覆盖 AC-CC-01），不外扩 |
@@ -89,7 +88,7 @@ python -c "import sqlite3,json,collections; db=sqlite3.connect(r'e:\equipment_di
 
 ## 5. C-012 对 AC-CC-01 的适用与不外扩声明
 
-- **AC-CC-01 = 通过**：依 `ARCH §10.4 C-012`（产品方 2026-10-26 批准），AC-CC-01 浏览器/版本覆盖的客观偏差（Edge 仅 1 个版本、Windows 无原生 Safari 以 WebKit 替代）予以接受。
+- **AC-CC-01 = 通过**：依 `ARCH §10.4 C-012`（产品方批准），AC-CC-01 浏览器/版本覆盖的客观偏差（Edge 仅 1 个版本、Windows 无原生 Safari 以 WebKit 替代）予以接受。
 - **证据**：7 组配置（Chrome 156/155、Edge 156、Firefox 157/155、WebKit 27.2/26.6）× 6 步共 42 张截图，`screenshots/evidence/AC-CC-01-browser-smoke.json` 7/7 `pass=true`。
 - **不外扩**：`C-012` 适用范围**仅限 AC-CC-01**，不构成对 PRD 附录 B 的永久修改，不得用于其他 AC 或任何 KPI 的豁免。
 - 建议后续补齐：具备 Edge 次新版本安装包的机器补一次冒烟；macOS 真机 Safari 走一次同链路。
@@ -138,7 +137,7 @@ python -c "import sqlite3,json,collections; db=sqlite3.connect(r'e:\equipment_di
 
 | 文件 | 说明 |
 | --- | --- |
-| `storage/pytest-accept-v5.xml` | 194 collected / 0 failed / 0 error / 0 skipped（2026-10-26 16:09:41 +08:00） |
+| `storage/pytest-accept-v5.xml` | 194 collected / 0 failed / 0 error / 0 skipped |
 
 ### 7.3 截图证据
 

@@ -2,15 +2,14 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 执行日期 | 2026-10-24 |
 | 执行角色 | QA / 测试执行 |
-| 判定基线 | **最终判定：`docs/FINAL-ACCEPTANCE-V5.md`（2026-10-26，通过 90/90）**；首轮基线为 `docs/FINAL-ACCEPTANCE.md`（38 条未验证 + 14 条失败） |
+| 判定基线 | **最终判定：`docs/FINAL-ACCEPTANCE-V5.md`（通过 90/90）**；首轮基线为 `docs/FINAL-ACCEPTANCE.md`（38 条未验证 + 14 条失败） |
 | 执行方式 | 真实 HTTP 调用 + 真实浏览器（Playwright）+ 独立辅助实例 + 服务端数据库/事件复核 |
 | 证据目录 | `screenshots/evidence/`、`screenshots/e2e/`、`storage/evidence/` |
 | 当前结论 | **90/90 通过（P0 78/78、P1 12/12）；未验证 0、失败 0、待裁决 0**（V5，详见 §8） |
 | 历史轮次 | 首轮新增通过 25 条（含 3 条原失败转通过），新增失败 3 条、未验证 38 → 13；第三轮再闭环 14 条、未验证降至 3 条；V4 起 AC-CC-01 依 `C-012` 判通过、AC-KB-06 为唯一未验证项；V5 已将 AC-KB-06 闭环（§8） |
 
-> **最终判定的唯一权威为 `docs/FINAL-ACCEPTANCE-V5.md`（2026-10-26）：90/90 通过，P0 78/78、P1 12/12，无剩余阻塞项。**
+> **最终判定的唯一权威为 `docs/FINAL-ACCEPTANCE-V5.md`：90/90 通过，P0 78/78、P1 12/12，无剩余阻塞项。**
 > 本文件只登记实测证据与状态翻转，判定以 V5 为准；§1–§7 的历史轮次记录按要求保留原文，不代表当前状态，最新口径见 §8。
 
 ---
@@ -24,7 +23,7 @@
 | 后端 | `http://127.0.0.1:8000`（前缀 `/api/v1`），健康检查 200 |
 | 前端 | `http://localhost:5173`（Vite，IPv6 监听） |
 | 数据/模型 | `data/ai4i2020.csv`（240 行实测取用）、`models/bge-m3` |
-| LLM 模式 | 首轮（2026-10-24）`.env` 为 `EDG_LLM_MODE=fake`；**2026-10-26 复核已为 `deepseek`**（见 §3.4） |
+| LLM 模式 | 首轮 `.env` 为 `EDG_LLM_MODE=fake`；**复核已为 `deepseek`**（见 §3.4） |
 | 辅助实例 :8014 | 用环境变量覆盖 `EDG_LLM_MODE=deepseek`，真实 DeepSeek 跑 KPI-05（隔离 DB） |
 | 辅助实例 :8011 | 节点延迟注入，验证 15s 熔断（隔离 DB，hash 检索） |
 | 辅助实例 :8012 | `INTERRUPT_TTL_MINUTES=1`、`INTERRUPT_SCAN_SECONDS=5`、`BATCH_TASK_TIMEOUT_MINUTES=1`（隔离 DB） |
@@ -47,17 +46,17 @@
 | **KPI-01 六分类原始值（必须同时披露）** | **88.33%（106/120）** | ≥90% | **未达门槛，按 `C-011` 披露、不阻塞** | 同上；RNF 0/10、正常 4 条误判 TWF |
 | KPI-02 报告 8 要素完整率 | 100%（未复测，沿用） | 100% | 通过 | 同上 |
 | KPI-03 P95 延迟 | 6685 ms（未复测，沿用） | ≤10 s | 通过 | 同上 |
-| **KPI-04 批量成功率** | **99.58%（239/240）**；239 条成功行中 **238 条 `deepseek-chat`**、1 条 `rule-engine` 回落 | ≥99% | **通过（2026-10-26 DeepSeek 复核）** | `AC-KPI-04-result.json`、`AC-KPI-04-deepseek-report-meta.json` |
+| **KPI-04 批量成功率** | **99.58%（239/240）**；239 条成功行中 **238 条 `deepseek-chat`**、1 条 `rule-engine` 回落 | ≥99% | **通过（DeepSeek 复核）** | `AC-KPI-04-result.json`、`AC-KPI-04-deepseek-report-meta.json` |
 | **KPI-05 捏造率** | **0.00%（0/20，v2 真实未覆盖样本；A/B 两口径均为 0）** | 0 | **通过（指标达标；2 名自然人评审已签字）** | `AC-EV-07-v2-audit.md`、`AC-EV-07-v2-human-review.json`、`AC-EV-07-v2-review-form-A.md`、`AC-EV-07-v2-review-form-B.md` |
 | 超时率 | 0/120（沿用） | ≤1% | 通过 | 同上 |
 | artifact 落盘 | 已落盘 | 可追溯 | 通过 | `storage/eval/evb_01M5Q111XDZHNAA1YMCY2K14RR.json` |
 
-**KPI-04 明细（2026-10-25 首轮批次，非 V5 交付口径；V5 采用下方 DeepSeek 复核批次与 §7.4）**（`bch_01M5Q64RH5FXF3XEEERKJZBX6K`，240 行，真实任务）：
+**KPI-04 明细（首轮批次，非 V5 交付口径；V5 采用下方 DeepSeek 复核批次与 §7.4）**（`bch_01M5Q64RH5FXF3XEEERKJZBX6K`，240 行，真实任务）：
 `succeeded 207 + degraded_review 32 + failed 1 + failed_timeout 0 + cancelled 0`，
 按“分母=已执行行（含 failed/failed_timeout），分子=成功+降级”计算 = **239/240 = 99.58%**。
 失败行为第 31 行（`QA-B-FAIL`，`error_field=air_temp_k`，`FEATURE_OUT_OF_RANGE`），其余行不受影响，同时覆盖行级错误隔离。
 
-**KPI-04 DeepSeek 复核（2026-10-26，批次 `bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD`）**：
+**KPI-04 DeepSeek 复核（批次 `bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD`）**：
 240 行实测 `succeeded 209 + degraded_review 30 + failed 1`（任务态 `partially_failed`；分母仍取 240，成功 239）。
 逐行读取 `report_meta.model_name`：**238 条 `deepseek-chat`**（`llm_used=true`）、
 1 条 `rule-engine`（第 195 行 `dx_01M5SAAPNQM2BAMB4X6151RA7P`，`status=succeeded`、`llm_used=false`、`llm_calls=0`、`duration_ms=8256`）、
@@ -67,16 +66,16 @@
 `llm_used=false`、`report_retry_count=0`、`degraded_reasons` 为空串、`error_code=NULL`。即**报告 LLM 失败未重试、未降级，状态仍 `succeeded`**（OBS-10 同源，见 §7.3）。
 
 **KPI-05 备注（首轮口径，已被 v2 取代）**：首轮 20 条 edge 样本在 fake 与 deepseek 两种模式下重跑，均 `knowledge_status=supported`（前置不成立，不能证明未覆盖场景），
-因此首轮 0.0 属“分母无区分力”。2026-10-26 的 v2 轮次已以 `vector_index=missing` 构造真实未覆盖前置并完成双人评审（见下）。
+因此首轮 0.0 属“分母无区分力”。v2 轮次已以 `vector_index=missing` 构造真实未覆盖前置并完成双人评审（见下）。
 
 **KPI-05 deepseek 模式附注**：`:8014` 真实 LLM 批次中 `EDGE-19`（`dx_01M5Q85P0R6FDR06ABZVRK4G2C`）出现报告节点 LLM 调用超时
 （`llm_call status=error code=LLM_TIMEOUT model=deepseek-chat attempt=1`，随后 `report llm timeout`），
 系统回落规则模板，`report.md` 返回 200、`status=succeeded`、`duration_ms=7483`。
 该行为属于“失败可观测 + 降级留痕”，**未伪造 LLM 结论**，已在评审记录中按“未声明 LLM 归因”计为不捏造；但同时说明 `AC-DG-17`（报告 LLM 失败→重试→degraded）路径未被覆盖，见 §4。
 
-**KPI-05 v2 轮次（2026-10-26 补录）**：`AC-EV-07-v2-*` 以 `vector_index=missing` 构造真实未覆盖前置，20/20 条 `knowledge_status=missing`、报告 20/20 显式声明未覆盖。
+**KPI-05 v2 轮次（补录）**：`AC-EV-07-v2-*` 以 `vector_index=missing` 构造真实未覆盖前置，20/20 条 `knowledge_status=missing`、报告 20/20 显式声明未覆盖。
 两份评审表逐条 20×2 项勾选完整：A 判定 1=是 0 条、B 3 条（EDGE-06/15/20，属口径差异），判定 2 均为“是”，两口径捏造均为 0/20，`fabrication_rate=0.00%`。
-三项已闭环（2026-10-26）：① EDGE-06/EDGE-15/EDGE-20 经项目负责人裁决采纳 A 表保守口径并留痕；② 两份表第 7 条已由评审人复核改写为“判定由本人独立作出”；③ 项目方确认小A/小B 为两名不同自然人。详见 `AC-EV-07-v2-human-review.json`。
+三项已闭环：① EDGE-06/EDGE-15/EDGE-20 经项目负责人裁决采纳 A 表保守口径并留痕；② 两份表第 7 条已由评审人复核改写为“判定由本人独立作出”；③ 项目方确认小A/小B 为两名不同自然人。详见 `AC-EV-07-v2-human-review.json`。
 
 ---
 
@@ -97,9 +96,9 @@
 | AC-IN-17 | 映射 `row_no` 越界 | 通过 | `extras-auth-upload-history.json` | 越界 422 `OUT_OF_RANGE`，正常行 200 |
 | AC-IN-20 | 10 行重复数据 | 通过 | `AC-IN-20-duplicate-rows.json` | 10 个独立 `diagnosis_id`，`row_no=[1..10]` |
 | AC-IN-21 | 批量任务超时 | 通过 | `AC-IN-21-batch-timeout.json` | `timed_out`；12 行完成、8 行 `cancelled(TASK_TIMEOUT)`，运行中行允许完成 |
-| AC-DG-13 | 缺失索引 → `knowledge_status=missing` + 报告声明未覆盖 | 通过（2026-10-26 复核翻转；首轮失败已修复） | `storage/pytest-final-20261026.xml`、`.../test_p0_runtime.py::test_ac_dg13_*`（3 条）、首轮现场记录 `AC-DG-13-evidence.json` | 重启 missing、不自动 rebuild、报告声明未覆盖（AC-EV-07-v2 亦以 20/20 `missing` 佐证）；首轮失败明细保留于 §3.1 |
+| AC-DG-13 | 缺失索引 → `knowledge_status=missing` + 报告声明未覆盖 | 通过（复核翻转；首轮失败已修复） | `storage/pytest-final-20261026.xml`、`.../test_p0_runtime.py::test_ac_dg13_*`（3 条）、首轮现场记录 `AC-DG-13-evidence.json` | 重启 missing、不自动 rebuild、报告声明未覆盖（AC-EV-07-v2 亦以 20/20 `missing` 佐证）；首轮失败明细保留于 §3.1 |
 | AC-DG-14 | 过期后相同输入新建 | 通过 | `AC-DG-23-ttl-db-events.json` | 过期后新建返回不同 `diagnosis_id` |
-| AC-DG-16 | 并发 resume 冲突 | 通过（2026-10-26 复核翻转；首轮为错误码不符） | `.../test_p0_runtime.py::test_ac_dg16_*`（3 条：并发 `[200,409]`+`VERSION_CONFLICT`、stale version、条件更新原子性） | 版本校验已前置于状态校验；首轮现场记录保留于 §3.2 |
+| AC-DG-16 | 并发 resume 冲突 | 通过（复核翻转；首轮为错误码不符） | `.../test_p0_runtime.py::test_ac_dg16_*`（3 条：并发 `[200,409]`+`VERSION_CONFLICT`、stale version、条件更新原子性） | 版本校验已前置于状态校验；首轮现场记录保留于 §3.2 |
 | AC-DG-21 | 15s 全局熔断 | 通过 | `AC-DG-21-timeout.json`、`AC-DG-21-sse-*.txt` | 4 节点各 16.4-16.5s 终止，均 `failed_timeout`、报告 409、SSE 收到终态事件 |
 | AC-DG-22 | 60s 后台过期扫描 | 通过（原失败转通过） | `AC-DG-23-ttl-db-events.json` | 实例配 `SCAN=5s`，诊断在**零请求**的 64s 内被后台置 `expired`，证明存在定时扫描（默认 60s） |
 | AC-DG-23 | TTL 自动过期 + 事件 | 通过 | `AC-DG-23-ttl-db-events.json` | `diagnosis_events` 写入 `type=expired, reason=TTL_EXCEEDED`；resume 409；无报告 |
@@ -126,7 +125,7 @@
 | AC-SY-03 | BGE 不可用时健康语义 | 通过 | `.../test_p1_startup.py::test_health_reports_degraded_with_embedding_reason_when_bge_unavailable` | `status=degraded`、`embedding_model=degraded`、`embedding_reason=fallback:hash-ngram-512`、`vector_index=ok` |
 | AC-SE-04 | 未授权导出/报告不泄露 | 通过 | `.../test_p0_auth_se.py::test_ac_se04_unauthorized_export_and_report_have_no_report_body` | `report.md` 与批量 `export.csv` 均 401 `AUTH_REQUIRED`；响应体不含 `## 结论`/列名/报告前缀 |
 | AC-SE-05 | production 启动门禁 | 通过（三项同缺，未做单项隔离） | `.../test_p1_startup.py::test_production_gate_blocks_missing_https_db_encryption_and_key` | 缺 HTTPS/DB 密钥/DeepSeek Key → `RuntimeError` 并列出 3 项；完整配置可正常 `create_app` |
-| AC-CC-01 | 多浏览器冒烟（四浏览器 × 两个大版本） | **通过（V5 引用 `C-012`；产品方 2026-10-26 书面裁决，接受 Edge 单版本 + WebKit 替代 Safari）** | `\\?\E:\equipment_diag_agent\screenshots\evidence\AC-CC-01-browser-smoke.json`；`screenshots/evidence/AC-CC-01-{chrome,chrome155,edge,firefox,firefox_prev,webkit,webkit_prev}-*.png`（7 组共 42 张） | 裁决登记见 `docs/ARCH-系统架构与API契约.md` §10.4 **C-012**；适用范围仅限 AC-CC-01 浏览器/版本覆盖判定，**不外扩**到其他 AC 或 KPI；V5 已引用 |
+| AC-CC-01 | 多浏览器冒烟（四浏览器 × 两个大版本） | **通过（V5 引用 `C-012`；产品方书面裁决，接受 Edge 单版本 + WebKit 替代 Safari）** | `\\?\E:\equipment_diag_agent\screenshots\evidence\AC-CC-01-browser-smoke.json`；`screenshots/evidence/AC-CC-01-{chrome,chrome155,edge,firefox,firefox_prev,webkit,webkit_prev}-*.png`（7 组共 42 张） | 裁决登记见 `docs/ARCH-系统架构与API契约.md` §10.4 **C-012**；适用范围仅限 AC-CC-01 浏览器/版本覆盖判定，**不外扩**到其他 AC 或 KPI；V5 已引用 |
 | AC-KB-06（V5 终轮补证） | 修改 `chunk_size/overlap/Top-K` 后重跑并给出前后对比 | **通过（V5）** | `storage/evidence/AC-KB-06-param-sweep.json`（与 `AC-KB-06-retrieval-comparison.json` 内容完全一致） | 两组参数 `400/50/5` 与 `200/20/8` 各建临时库实测；固定集 50 条；`delta=1.0-1.0=0.0`；`repeat.consistent=true`、`params_changed=true`；active 仍仅 `kb_v1` |
 
 > 未列出的 AC 维持 `FINAL-ACCEPTANCE.md` 原判定。
@@ -135,7 +134,7 @@
 
 ## 3. 失败与偏差明细
 
-### 3.1 AC-DG-13（首轮现场记录；2026-10-26 复核已翻转通过）
+### 3.1 AC-DG-13（首轮现场记录；复核已翻转通过）
 
 三种构造方式均无法得到“缺失索引→`knowledge_status=missing`”：
 
@@ -145,14 +144,14 @@
 
 附带观测：种子文件带 UTF-8 BOM 时启动失败 `json.decoder.JSONDecodeError: Unexpected UTF-8 BOM`，导入入口未做 BOM 兼容。
 
-> **2026-10-26 复核（状态翻转）**：上述现象为首轮（2026-10-24）现场。其后代码已修复，`test_p0_runtime.py` 新增 3 条用例 `test_ac_dg13_missing_index_degrades_to_unknown`、`test_ac_dg13_deleted_index_on_restart_marks_missing`、`test_ac_dg13_empty_seed_starts_as_missing` 全绿；AC-EV-07-v2 亦以 `vector_index=missing` 构造出 20/20 未覆盖样本。故 §2 中 AC-DG-13 已按“通过”登记，本节仅保留首轮失败留痕。
+> **复核（状态翻转）**：上述现象为首轮现场。其后代码已修复，`test_p0_runtime.py` 新增 3 条用例 `test_ac_dg13_missing_index_degrades_to_unknown`、`test_ac_dg13_deleted_index_on_restart_marks_missing`、`test_ac_dg13_empty_seed_starts_as_missing` 全绿；AC-EV-07-v2 亦以 `vector_index=missing` 构造出 20/20 未覆盖样本。故 §2 中 AC-DG-13 已按“通过”登记，本节仅保留首轮失败留痕。
 
-### 3.2 AC-DG-16（首轮现场记录；2026-10-26 复核已翻转通过）
+### 3.2 AC-DG-16（首轮现场记录；复核已翻转通过）
 
 3 次并发 `/resume` 均为 `[200, 409]`：决策只应用一次（正确），但失败方错误码是 `DIAGNOSIS_STATE_CONFLICT`（“当前状态不允许恢复”），
 而 AC 要求 `VERSION_CONFLICT`（“状态已变更，请刷新”）。原因是版本校验之前先做状态校验，`VERSION_CONFLICT` 实际不可达。
 
-> **2026-10-26 复核（状态翻转）**：版本校验已前置于状态校验；`test_p0_runtime.py` 的 `test_ac_dg16_concurrent_resume_only_one_wins`、`test_ac_dg16_stale_resume_version_returns_version_conflict`、`test_ac_dg16_conditional_update_is_atomic` 三条全绿，失败方错误码为 `VERSION_CONFLICT`。§2 已按“通过”登记，本节仅保留首轮留痕。
+> **复核（状态翻转）**：版本校验已前置于状态校验；`test_p0_runtime.py` 的 `test_ac_dg16_concurrent_resume_only_one_wins`、`test_ac_dg16_stale_resume_version_returns_version_conflict`、`test_ac_dg16_conditional_update_is_atomic` 三条全绿，失败方错误码为 `VERSION_CONFLICT`。§2 已按“通过”登记，本节仅保留首轮留痕。
 
 ### 3.3 AC-CC-01（第三轮留痕：“待裁决”；V5 已按 `C-012` 判通过）
 
@@ -184,12 +183,12 @@
 | Firefox 版本非“连续两个最新”（155 与 157，缺 156） | 低 | 两代内核差异已覆盖，且本链路无 Firefox 专有 API；如发布窗口敏感可补 156 |
 | 移动端 / 移动 Safari 未覆盖 | 中 | AC 未要求，但用户可能经手机访问；建议后续以 Playwright 设备仿真补测 |
 
-> 结论（历史轮次留痕）：当时按严格口径不构成完全通过，且截至第三轮未见产品方书面裁决，故记为“待评审裁决”。**2026-10-26 产品方已书面裁决并登记 `ARCH §10.4 C-012`，V5 已引用该裁决，AC-CC-01 判通过（见 §2 与 §8）；C-012 适用范围仅限 AC-CC-01，不外扩。**
+> 结论（历史轮次留痕）：当时按严格口径不构成完全通过，且截至第三轮未见产品方书面裁决，故记为“待评审裁决”。**产品方已书面裁决并登记 `ARCH §10.4 C-012`，V5 已引用该裁决，AC-CC-01 判通过（见 §2 与 §8）；C-012 适用范围仅限 AC-CC-01，不外扩。**
 
-### 3.4 环境偏差（已于 2026-10-26 复核更新）
+### 3.4 环境偏差（已于复核更新）
 
-- **首轮（2026-10-24）**：`.env` 为 `EDG_LLM_MODE=fake`，:8000 上诊断（含当时 240 行批量）走规则模板；据此首轮 KPI-04 属 fake 模式结果。
-- **当前（2026-10-26 复核）**：`.env` 已为 **`EDG_LLM_MODE=deepseek`**（`EDG_EMBEDDING_MODE=auto`）；批次 `bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD` 的 239 条成功行中 **238 条 `deepseek-chat`**、1 条 `rule-engine` 报告回落（§1），KPI-04 已在 DeepSeek 模式复核。
+- **首轮**：`.env` 为 `EDG_LLM_MODE=fake`，:8000 上诊断（含当时 240 行批量）走规则模板；据此首轮 KPI-04 属 fake 模式结果。
+- **当前（复核）**：`.env` 已为 **`EDG_LLM_MODE=deepseek`**（`EDG_EMBEDDING_MODE=auto`）；批次 `bch_01M5S9Q7P4VHTNTM5Z5X3PE5ZD` 的 239 条成功行中 **238 条 `deepseek-chat`**、1 条 `rule-engine` 报告回落（§1），KPI-04 已在 DeepSeek 模式复核。
 - 遗留：报告 LLM 超时/异常时**静默回落模板且状态仍 `succeeded`**（无 `degraded` 标记），与 OBS-10 同源，详见 §7.3。
 
 ### 3.5 仍失败项（第三轮留痕；**V5 已全部闭环，当前失败项为 0**）
@@ -210,7 +209,7 @@
 | AC-RP-05 | 0.62 置信度 review 阈值夹具 | 仍未验证 | **通过**：0.62 → `retry_count=1` → 确认 → 报告前 16 行含指定文案，落盘 `storage/evidence/AC-RP-05-report.json` |
 | AC-CC-01 | 四浏览器 × 最新两个大版本：Edge 仅 1 个版本、原生 Safari 不可得 | 待评审裁决 | **通过**：`ARCH §10.4 C-012` 产品方裁决已登记，V5 引用；范围仅限 AC-CC-01 |
 
-**2026-10-26 已闭环（原 13 条未验证中剔除）**：AC-US-08、AC-IN-11、AC-IN-13、AC-DG-07、AC-DG-09、AC-DG-11、AC-DG-17、AC-KB-01、AC-KB-02、AC-EV-03（证据见 §2 与 §7）。
+**已闭环（原 13 条未验证中剔除）**：AC-US-08、AC-IN-11、AC-IN-13、AC-DG-07、AC-DG-09、AC-DG-11、AC-DG-17、AC-KB-01、AC-KB-02、AC-EV-03（证据见 §2 与 §7）。
 **V5 新增闭环**：AC-KB-06（参数变更对比 + 同参数重复一致）。
 
 ---
@@ -269,7 +268,7 @@ python C:\Users\25352\AppData\Local\Temp\qa_edg\kpi04_meta.py
 | --- | --- |
 | 本轮实际执行 | 7 项核心测试全部真实运行 + 12 条补充 AC 用例（首轮） |
 | 新增通过 | 25 条（其中 AC-US-03、AC-DG-22、AC-EV-07 由“失败”转“通过”） |
-| 新增失败 | 首轮 3 条（AC-DG-13、AC-DG-16、AC-CC-01）；其中 AC-DG-13、AC-DG-16 已于 2026-10-26 复核转通过，AC-CC-01 后由 `C-012` 裁决、V5 引用后判通过 |
+| 新增失败 | 首轮 3 条（AC-DG-13、AC-DG-16、AC-CC-01）；其中 AC-DG-13、AC-DG-16 已于复核转通过，AC-CC-01 后由 `C-012` 裁决、V5 引用后判通过 |
 | AC-CC-01 复核 | 已补 Chrome 156/155、Firefox 157/155、WebKit 27.2/26.6 共 7 组配置（全部通过）；第三轮当时因 Edge 第二版本与原生 Safari 环境不可得记为待裁决（§3.3），V5 已按 `C-012` 判通过 |
 | 未验证 | 38 → 13（首轮）→ 3（第三轮）→ **0（V5）** |
 | 待裁决 | 0（AC-CC-01 已由 `C-012` 裁决、V5 引用后判通过） |
@@ -280,7 +279,7 @@ python C:\Users\25352\AppData\Local\Temp\qa_edg\kpi04_meta.py
 
 ---
 
-# 2026-10-26 第三轮补验
+# 第三轮补验
 
 ## 7.1 全量测试复跑
 
@@ -292,7 +291,7 @@ python -m pytest -q --junitxml=..\storage\pytest-final-20261026.xml
 | 项目 | 结果 |
 | --- | --- |
 | JUnit | `storage/pytest-final-20261026.xml` |
-| 统计 | **tests=185、failures=0、errors=0、skipped=0**，耗时 46.0s，时间戳 2026-10-26T10:58:10+08:00 |
+| 统计 | **tests=185、failures=0、errors=0、skipped=0**，耗时 46.0s |
 | 覆盖 | 含 10 条 P0 补证（`test_p0_*`）+ 4 条 P1 补证（`test_p1_*`） |
 | 判断 | ≥185 且全绿，**满足门槛** |
 
@@ -359,7 +358,7 @@ python -m pytest -q --junitxml=..\storage\pytest-final-20261026.xml
 
 ## 7.6 AC-CC-01 状态（第三轮留痕；**V5 已闭环**）
 
-- 2026-10-26 第三轮检索 `docs/`：当时仅见 `ARCH §10.4 C-011`，未见针对 AC-CC-01 的书面裁决，故当时维持“待评审裁决”。
+- 第三轮检索 `docs/`：当时仅见 `ARCH §10.4 C-011`，未见针对 AC-CC-01 的书面裁决，故当时维持“待评审裁决”。
 - **现行状态**：产品方已批准并登记 `ARCH §10.4 C-012`，V5 已引用，AC-CC-01 判 **通过**；`C-012` 适用范围仅限 AC-CC-01（浏览器/版本覆盖），不外扩到其他 AC 或 KPI。
 - 证据：7 组配置 × 6 步全通过（42 张截图）、`AC-CC-01-browser-smoke.json`、`screenshots/evidence/AC-CC-01-*.png`。
 
@@ -376,16 +375,16 @@ python -m pytest -q --junitxml=..\storage\pytest-final-20261026.xml
 
 ---
 
-# 2026-10-26 终轮（V5）
+# 终轮（V5）
 
-> 本节为当前口径。**判定以 `docs/FINAL-ACCEPTANCE-V5.md` 为准（2026-10-26，通过 90/90）**；上文 §1–§7 为历史轮次证据登记，保留原文。
+> 本节为当前口径。**判定以 `docs/FINAL-ACCEPTANCE-V5.md` 为准（通过 90/90）**；上文 §1–§7 为历史轮次证据登记，保留原文。
 
 ## 8.1 测试基线
 
 | 项目 | 内容 |
 | --- | --- |
 | 基线文件 | `storage/pytest-accept-v5.xml` |
-| 统计 | **194 collected / 0 failed / 0 error / 0 skipped**，耗时 50.686s，时间戳 2026-10-26T16:09:41.993628+08:00 |
+| 统计 | **194 collected / 0 failed / 0 error / 0 skipped**，耗时 50.686s |
 | 相对 V4（192 条） | 移除 1 条旧 KB-06 用例、新增 3 条，净增 2 |
 | 复验命令 | `cd backend; python -m pytest -q --junitxml=..\storage\pytest-accept-v5.xml` |
 
